@@ -1,0 +1,21 @@
+# Ambiente reproduzível para dados locais e os braços PennyLane/Qiskit.
+numpy==2.0.2
+Pillow==11.1.0
+PyYAML==6.0.2
+scipy==1.15.2
+
+# Preparo de dados e braço híbrido PennyLane/Torch.
+tensorflow==2.18.1
+torch==2.8.0
+
+# Computação quântica.
+pennylane==0.44.1
+pennylane-lightning==0.44.0
+qiskit==2.3.0
+qiskit-aer==0.17.2
+qiskit-algorithms==0.4.0
+qiskit-machine-learning==0.9.1
+
+# Testes e instalação do comando tcc-benchmark.
+pytest==8.3.5
+-e .

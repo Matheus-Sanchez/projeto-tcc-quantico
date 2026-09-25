@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: tcc-benchmark
+Version: 0.1.0
+Summary: Núcleo compacto para dados e experimentos quânticos do TCC.
+Requires-Python: <3.13,>=3.12
+Requires-Dist: numpy==2.0.2
+Requires-Dist: Pillow==11.1.0
+Requires-Dist: PyYAML==6.0.2
+Requires-Dist: scipy==1.15.2
+Provides-Extra: tensorflow
+Requires-Dist: tensorflow==2.18.1; extra == "tensorflow"
+Provides-Extra: quantum
+Requires-Dist: torch==2.8.0; extra == "quantum"
+Requires-Dist: pennylane==0.44.1; extra == "quantum"
+Requires-Dist: pennylane-lightning==0.44.0; extra == "quantum"
+Requires-Dist: qiskit==2.3.0; extra == "quantum"
+Requires-Dist: qiskit-aer==0.17.2; extra == "quantum"
+Requires-Dist: qiskit-algorithms==0.4.0; extra == "quantum"
+Requires-Dist: qiskit-machine-learning==0.9.1; extra == "quantum"
+Provides-Extra: dev
+Requires-Dist: pytest<9,>=8; extra == "dev"
