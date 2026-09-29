@@ -121,7 +121,7 @@ def classification_metrics(
             from sklearn.metrics import roc_auc_score
             probabilities = np.asarray(raw_predictions, dtype=np.float64)
             macro_ovr_auc = float(roc_auc_score(truth, probabilities, labels=np.arange(classes), multi_class="ovr", average="macro"))
-        except ValueError:
+        except (ImportError, ValueError):
             macro_ovr_auc = None
     return ClassificationMetrics(
         accuracy=float(np.trace(matrix) / len(truth)),
@@ -202,6 +202,53 @@ def _current_learning_rate(model: Any) -> float:
     return float(tensorflow.keras.backend.get_value(value))
 
 
+def _float_logs(logs: Mapping[str, Any]) -> dict[str, float]:
+    result: dict[str, float] = {}
+    for key, value in logs.items():
+        try:
+            result[str(key)] = float(value)
+        except (TypeError, ValueError):
+            continue
+    return result
+
+
+def _flatten_per_class(metrics: ClassificationMetrics, *, prefix: str = "val") -> dict[str, float]:
+    flattened: dict[str, float] = {}
+    for label, item in metrics.per_class.items():
+        flattened[f"{prefix}_class_{label}_precision"] = float(item.precision)
+        flattened[f"{prefix}_class_{label}_recall"] = float(item.recall)
+        flattened[f"{prefix}_class_{label}_f1"] = float(item.f1)
+        flattened[f"{prefix}_class_{label}_support"] = float(item.support)
+    return flattened
+
+
+def _write_history(path: Path, rows: Sequence[Mapping[str, Any]]) -> None:
+    """Atomically persist epoch history so interruptions leave valid CSV."""
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    preferred = [
+        "epoch", "loss", "accuracy", "val_loss", "val_accuracy",
+        "val_balanced_accuracy", "val_macro_f1", "learning_rate",
+        "epoch_seconds", "train_examples", "train_examples_per_second",
+    ]
+    all_keys = {str(key) for row in rows for key in row}
+    fieldnames = [key for key in preferred if key in all_keys]
+    fieldnames.extend(sorted(all_keys - set(fieldnames)))
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    with temporary.open("w", encoding="utf-8", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+    temporary.replace(path)
+
+
+def _read_history(path: Path) -> list[dict[str, Any]]:
+    if not path.exists():
+        return []
+    with path.open("r", encoding="utf-8", newline="") as stream:
+        return [dict(row) for row in csv.DictReader(stream)]
+
+
 if _tf is not None:
 
     class EpochTimingCallback(_tf.keras.callbacks.Callback):
@@ -219,6 +266,11 @@ if _tf is not None:
             epoch_seconds = float(time.perf_counter() - self._started_at) if self._started_at is not None else float("nan")
             logs["epoch_seconds"] = epoch_seconds
             logs["learning_rate"] = _current_learning_rate(self.model)
+            if self.train_examples_per_epoch is not None:
+                logs["train_examples"] = float(self.train_examples_per_epoch)
+                logs["train_examples_per_second"] = (
+                    float(self.train_examples_per_epoch) / epoch_seconds if epoch_seconds > 0 else float("nan")
+                )
 
     class EpochMetricsCallback(EpochTimingCallback):
         def __init__(
@@ -235,6 +287,10 @@ if _tf is not None:
             self.history_path = Path(history_path) if history_path is not None else None
             self.rows: list[dict[str, Any]] = []
 
+        def on_train_begin(self, logs: dict[str, Any] | None = None) -> None:
+            if self.history_path is not None:
+                self.rows = _read_history(self.history_path)
+
         def on_epoch_end(self, epoch: int, logs: dict[str, Any] | None = None) -> None:
             super().on_epoch_end(epoch, logs)
             if logs is None:
@@ -243,6 +299,18 @@ if _tf is not None:
             metrics = classification_metrics(y_true, probabilities, num_classes=self.num_classes)
             logs["val_balanced_accuracy"] = float(metrics.balanced_accuracy)
             logs["val_macro_f1"] = float(metrics.macro_f1)
+            row: dict[str, Any] = {
+                "epoch": int(epoch) + 1,
+                **_float_logs(logs),
+                **_flatten_per_class(metrics, prefix="val"),
+            }
+            # BackupAndRestore may replay the last completed epoch. Replace it
+            # instead of duplicating a CSV row.
+            self.rows = [item for item in self.rows if int(float(item.get("epoch", -1))) != int(epoch) + 1]
+            self.rows.append(row)
+            self.rows.sort(key=lambda item: int(float(item["epoch"])))
+            if self.history_path is not None:
+                _write_history(self.history_path, self.rows)
 
     class ValidationMacroF1Callback(EpochMetricsCallback):
         pass

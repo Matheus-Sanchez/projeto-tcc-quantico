@@ -1,5 +1,55 @@
 # Benchmark do TCC
 
+## Rodada clássica Dense20 com backbone congelado
+
+Esta rodada é exclusivamente clássica. Ela seleciona o checkpoint FP32
+controlado de cada dataset, congela o modelo até `block5_pool` e treina a
+cabeça `GlobalAveragePooling2D -> Dense(20) -> LayerNormalization -> ReLU ->
+Dense(C)`. O comando não importa nem executa `quantum_models`.
+
+No Ubuntu WSL, crie um ambiente Python 3.10 isolado e exponha as bibliotecas
+CUDA instaladas pelo TensorFlow:
+
+```bash
+python3.10 -m venv /root/.venvs/projeto-tcc-classic
+/root/.venvs/projeto-tcc-classic/bin/python -m pip install -r requirements/classic-wsl-gpu.txt
+export PYTHON_BIN=/root/.venvs/projeto-tcc-classic/bin/python
+bash scripts/wsl-classic-env.sh "$PYTHON_BIN" -m classic_models.dense20 --all --dry-run
+bash scripts/wsl-classic-env.sh "$PYTHON_BIN" -m classic_models.dense20 --all --registry configs/datasets.wsl.yaml
+```
+
+O perfil fixo usa seed 42, batch 128, FP32, Adam `3e-4`, augmentation 0,5
+sem flip horizontal, 100 épocas e checkpoint por `val_macro_f1`. Use
+`--resume` após interrupção. As saídas ficam em `outputs/classic-dense20/`.
+
+### Interface correta para trocar a ponta densa
+
+Para treinar uma nova ponta completa sem repetir o backbone, use **somente** a
+exportação `features128`. Ela termina neste ponto:
+
+```text
+imagem -> backbone congelado -> block5_pool -> GlobalAveragePooling2D -> float32[128]
+```
+
+Não há `Dense(20)`, normalização ou ativação nesses vetores. `features20` e
+`encoder20.keras` continuam sendo saídas específicas do experimento Dense20 e
+não devem ser usados para comparar pontas densas completas diferentes.
+
+Para validar ou refazer a exportação dos nove datasets no WSL:
+
+```bash
+export PYTHON_BIN=/root/.venvs/projeto-tcc-classic/bin/python
+bash scripts/run-features128-all.sh --verify-only
+bash scripts/run-features128-all.sh --overwrite
+```
+
+Cada run salva `artifacts/encoder128.keras` e os arquivos
+`artifacts/features128/{train,val,test}_{features,labels}.npy`. O treino de uma
+nova ponta deve carregar os vetores com `numpy.load`, construir o modelo com
+`tf.keras.Input(shape=(128,))`, usar treino/validação para seleção e reservar o
+split de teste para a avaliação final. A exportação também salva telemetria em
+`artifacts/features128/telemetry/`.
+
 O projeto tem quatro blocos pequenos e independentes:
 
 - `data_prep`: leitura local, split estratificado, normalização e balanceamento;

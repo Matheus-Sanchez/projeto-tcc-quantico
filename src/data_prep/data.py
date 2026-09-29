@@ -1073,6 +1073,7 @@ def prepare_run_datasets(
     augmentation: AugmentationConfig,
     preprocess_cache_max_mib: int = 0,
     shuffle_buffer_max_mib: int = 0,
+    output_dtype: str = "float16",
 ) -> PreparedRunDatasets:
     """Prepare the full leakage-safe data flow for one matrix cell.
 
@@ -1121,6 +1122,7 @@ def prepare_run_datasets(
         seed=seed,
         preprocess_cache_max_mib=preprocess_cache_max_mib,
         shuffle_buffer_max_mib=shuffle_buffer_max_mib,
+        output_dtype=output_dtype,
     )
     validation_ds, validation_info = build_tf_dataset(
         validation_samples,
@@ -1133,6 +1135,7 @@ def prepare_run_datasets(
         seed=seed,
         preprocess_cache_max_mib=preprocess_cache_max_mib,
         shuffle_buffer_max_mib=shuffle_buffer_max_mib,
+        output_dtype=output_dtype,
     )
     test_ds, test_info = build_tf_dataset(
         test_samples,
@@ -1145,12 +1148,14 @@ def prepare_run_datasets(
         seed=seed,
         preprocess_cache_max_mib=preprocess_cache_max_mib,
         shuffle_buffer_max_mib=shuffle_buffer_max_mib,
+        output_dtype=output_dtype,
     )
     metadata = {
         "seed": int(seed),
         "image_size": int(image_size),
         "channels": int(channels),
         "batch_size": int(batch_size),
+        "output_dtype": str(output_dtype),
         "fractions": {
             "train": float(train_fraction),
             "validation": float(validation_fraction),

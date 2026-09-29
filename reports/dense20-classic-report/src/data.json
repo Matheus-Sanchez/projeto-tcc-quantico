@@ -1,0 +1,533 @@
+{
+  "surface": "report",
+  "title": "O gargalo Dense20 preservou — e em sete bases melhorou — o Macro-F1 clássico",
+  "generatedAt": "2026-09-29T19:18:11.565Z",
+  "report": {"asOf": "2026-09-29"},
+  "status": "reviewed",
+  "buildStatus": "complete",
+  "filters": [],
+  "queries": {
+    "dense20_results": {
+      "rows": [
+        {
+          "dataset": "MNIST",
+          "datasetId": "mnist",
+          "originalMacroF1": 0.9898374947402326,
+          "dense20MacroF1": 0.9935021191480853,
+          "changePp": 0.3664624407852646,
+          "originalAccuracy": 0.9899028386359306,
+          "dense20Accuracy": 0.9935225757287103,
+          "balancedAccuracy": 0.9934344878150035,
+          "macroPrecision": 0.9935784501503516,
+          "macroRecall": 0.9934344878150035,
+          "macroAuc": 0.9998869091929015,
+          "testLoss": 0.025668948888778687,
+          "classes": 10,
+          "input": "64×64×1",
+          "trainableParams": 2830,
+          "trainOriginal": 48999,
+          "trainAugmented": 24499,
+          "trainTotal": 73498,
+          "validationExamples": 10503,
+          "testExamples": 10498,
+          "bestEpoch": 99,
+          "bestValMacroF1": 0.9949214028893291,
+          "lastValMacroF1": 0.9943248286895392,
+          "trainingSeconds": 718.922748641,
+          "throughput": 10244.306636522311,
+          "featureRows": 70000,
+          "featureShape": "N×20",
+          "backboneUnchanged": true,
+          "splitFingerprint": "e318c7442df3e0a1d1f67bd6fa1eac1602b6440bf135240aca0008293af1e6c8"
+        },
+        {
+          "dataset": "Fashion-MNIST",
+          "datasetId": "fashion_mnist",
+          "originalMacroF1": 0.9191524005956986,
+          "dense20MacroF1": 0.9183570979702014,
+          "changePp": -0.0795302625497207,
+          "originalAccuracy": 0.9191428571428572,
+          "dense20Accuracy": 0.9181904761904762,
+          "balancedAccuracy": 0.9181904761904761,
+          "macroPrecision": 0.9187487864122172,
+          "macroRecall": 0.9181904761904761,
+          "macroAuc": 0.9951330612244899,
+          "testLoss": 0.24187037348747253,
+          "classes": 10,
+          "input": "64×64×1",
+          "trainableParams": 2830,
+          "trainOriginal": 49000,
+          "trainAugmented": 24500,
+          "trainTotal": 73500,
+          "validationExamples": 10500,
+          "testExamples": 10500,
+          "bestEpoch": 25,
+          "bestValMacroF1": 0.9243099873254884,
+          "lastValMacroF1": 0.9222642494020489,
+          "trainingSeconds": 725.164437975,
+          "throughput": 10144.875267872896,
+          "featureRows": 70000,
+          "featureShape": "N×20",
+          "backboneUnchanged": true,
+          "splitFingerprint": "7d52ffaa0b79c6f8e5e510c6c95e9243e81e25c358269a10fe142381e9f5befb"
+        },
+        {
+          "dataset": "KMNIST",
+          "datasetId": "kmnist",
+          "originalMacroF1": 0.9864903021949722,
+          "dense20MacroF1": 0.9873343629300791,
+          "changePp": 0.08440607351068996,
+          "originalAccuracy": 0.9864761904761905,
+          "dense20Accuracy": 0.9873333333333333,
+          "balancedAccuracy": 0.9873333333333333,
+          "macroPrecision": 0.9873420530429972,
+          "macroRecall": 0.9873333333333333,
+          "macroAuc": 0.999776916099773,
+          "testLoss": 0.0508689247071743,
+          "classes": 10,
+          "input": "64×64×1",
+          "trainableParams": 2830,
+          "trainOriginal": 49000,
+          "trainAugmented": 24500,
+          "trainTotal": 73500,
+          "validationExamples": 10500,
+          "testExamples": 10500,
+          "bestEpoch": 95,
+          "bestValMacroF1": 0.9887620901261336,
+          "lastValMacroF1": 0.9879983390498207,
+          "trainingSeconds": 726.5333224320002,
+          "throughput": 10126.262722636848,
+          "featureRows": 70000,
+          "featureShape": "N×20",
+          "backboneUnchanged": true,
+          "splitFingerprint": "161c642197f73a5c2a9888f8f889988f3853ec4a3aa1a4101c2c1fe0d3478f81"
+        },
+        {
+          "dataset": "EMNIST Balanced",
+          "datasetId": "emnist_balanced",
+          "originalMacroF1": 0.8771932893374725,
+          "dense20MacroF1": 0.8884299468989971,
+          "changePp": 1.1236657561524588,
+          "originalAccuracy": 0.8785207700101317,
+          "dense20Accuracy": 0.8889564336372847,
+          "balancedAccuracy": 0.8889564336372848,
+          "macroPrecision": 0.8897477272620641,
+          "macroRecall": 0.8889564336372848,
+          "macroAuc": 0.997241545631512,
+          "testLoss": 0.340239554643631,
+          "classes": 47,
+          "input": "64×64×1",
+          "trainableParams": 3607,
+          "trainOriginal": 92120,
+          "trainAugmented": 46060,
+          "trainTotal": 138180,
+          "validationExamples": 19740,
+          "testExamples": 19740,
+          "bestEpoch": 93,
+          "bestValMacroF1": 0.8899057664036288,
+          "lastValMacroF1": 0.8884865375020481,
+          "trainingSeconds": 1343.485943162002,
+          "throughput": 10289.90241160757,
+          "featureRows": 131600,
+          "featureShape": "N×20",
+          "backboneUnchanged": true,
+          "splitFingerprint": "6e3059c51b533357fd06e5facb7f29c5be025840ab41ba1fe1d4e1431119bdd3"
+        },
+        {
+          "dataset": "CIFAR-10",
+          "datasetId": "cifar10",
+          "originalMacroF1": 0.7311697272995268,
+          "dense20MacroF1": 0.7303886294667785,
+          "changePp": -0.07810978327482676,
+          "originalAccuracy": 0.7312222222222222,
+          "dense20Accuracy": 0.7313333333333333,
+          "balancedAccuracy": 0.7313333333333333,
+          "macroPrecision": 0.7304157244901365,
+          "macroRecall": 0.7313333333333333,
+          "macroAuc": 0.9572566529492456,
+          "testLoss": 1.0034124851226807,
+          "classes": 10,
+          "input": "64×64×3",
+          "trainableParams": 2830,
+          "trainOriginal": 42000,
+          "trainAugmented": 21000,
+          "trainTotal": 63000,
+          "validationExamples": 9000,
+          "testExamples": 9000,
+          "bestEpoch": 15,
+          "bestValMacroF1": 0.7332193260798447,
+          "lastValMacroF1": 0.7312834000287298,
+          "trainingSeconds": 652.1373398879996,
+          "throughput": 9671.8675170598,
+          "featureRows": 60000,
+          "featureShape": "N×20",
+          "backboneUnchanged": true,
+          "splitFingerprint": "48145c3e2cc47bcc727ce18d9dcdfd00a7a3b8e638b53fdf41382a508562af83"
+        },
+        {
+          "dataset": "CIFAR-100 coarse",
+          "datasetId": "cifar100_coarse",
+          "originalMacroF1": 0.47457661366409976,
+          "dense20MacroF1": 0.47614844715075694,
+          "changePp": 0.15718334866571815,
+          "originalAccuracy": 0.4681111111111111,
+          "dense20Accuracy": 0.476,
+          "balancedAccuracy": 0.476,
+          "macroPrecision": 0.47876331220717383,
+          "macroRecall": 0.476,
+          "macroAuc": 0.8977379532163743,
+          "testLoss": 2.0034008026123047,
+          "classes": 20,
+          "input": "64×64×3",
+          "trainableParams": 3040,
+          "trainOriginal": 42000,
+          "trainAugmented": 21000,
+          "trainTotal": 63000,
+          "validationExamples": 9000,
+          "testExamples": 9000,
+          "bestEpoch": 83,
+          "bestValMacroF1": 0.48739925994251265,
+          "lastValMacroF1": 0.48565110525936844,
+          "trainingSeconds": 646.8292902519961,
+          "throughput": 9750.99472045063,
+          "featureRows": 60000,
+          "featureShape": "N×20",
+          "backboneUnchanged": true,
+          "splitFingerprint": "c5f33c74d1bd3def59246c517a567c911f730b09064cf4fc52cbbb4497c5afa0"
+        },
+        {
+          "dataset": "SVHN",
+          "datasetId": "svhn",
+          "originalMacroF1": 0.9208774793541732,
+          "dense20MacroF1": 0.9282113786542145,
+          "changePp": 0.7333899300041358,
+          "originalAccuracy": 0.9247297388034648,
+          "dense20Accuracy": 0.9318471765258847,
+          "balancedAccuracy": 0.9280643360739637,
+          "macroPrecision": 0.9283949436932002,
+          "macroRecall": 0.9280643360739637,
+          "macroAuc": 0.9946016540099649,
+          "testLoss": 0.259844571352005,
+          "classes": 10,
+          "input": "64×64×3",
+          "trainableParams": 2830,
+          "trainOriginal": 69502,
+          "trainAugmented": 34751,
+          "trainTotal": 104253,
+          "validationExamples": 14894,
+          "testExamples": 14893,
+          "bestEpoch": 25,
+          "bestValMacroF1": 0.9259962139428051,
+          "lastValMacroF1": 0.92490636762691,
+          "trainingSeconds": 1135.3435902890042,
+          "throughput": 9186.614069182633,
+          "featureRows": 99289,
+          "featureShape": "N×20",
+          "backboneUnchanged": true,
+          "splitFingerprint": "b1ad6aa772e6195196890106f84cdbed3cf158b3eae278cd230309d2f82758c9"
+        },
+        {
+          "dataset": "GTSRB",
+          "datasetId": "gtsrb",
+          "originalMacroF1": 0.9936487885367459,
+          "dense20MacroF1": 0.9961502469919806,
+          "changePp": 0.2501458455234751,
+          "originalAccuracy": 0.9957454050374405,
+          "dense20Accuracy": 0.9965963240299524,
+          "balancedAccuracy": 0.9961868156314531,
+          "macroPrecision": 0.9961441995978351,
+          "macroRecall": 0.9961868156314531,
+          "macroAuc": 0.9999943285951682,
+          "testLoss": 0.013457395136356354,
+          "classes": 43,
+          "input": "128×128×3",
+          "trainableParams": 3523,
+          "trainOriginal": 27489,
+          "trainAugmented": 13744,
+          "trainTotal": 41233,
+          "validationExamples": 5905,
+          "testExamples": 5876,
+          "bestEpoch": 99,
+          "bestValMacroF1": 0.9977236417222024,
+          "lastValMacroF1": 0.9972744332461314,
+          "trainingSeconds": 5589.160788171002,
+          "throughput": 738.3882493283832,
+          "featureRows": 39270,
+          "featureShape": "N×20",
+          "backboneUnchanged": true,
+          "splitFingerprint": "3bffc0cf36b45aeb68bbbf910a1c3e4bddb3a5dd1f6280e4ab6ea67034d7ea58"
+        },
+        {
+          "dataset": "FER2013",
+          "datasetId": "fer2013",
+          "originalMacroF1": 0.4815838020668068,
+          "dense20MacroF1": 0.4823386110663787,
+          "changePp": 0.0754808999571921,
+          "originalAccuracy": 0.5128205128205128,
+          "dense20Accuracy": 0.5126347082868822,
+          "balancedAccuracy": 0.48045432796227183,
+          "macroPrecision": 0.48813158476931523,
+          "macroRecall": 0.48045432796227183,
+          "macroAuc": 0.8243192734178763,
+          "testLoss": 1.456058382987976,
+          "classes": 7,
+          "input": "64×64×1",
+          "trainableParams": 2767,
+          "trainOriginal": 25121,
+          "trainAugmented": 12560,
+          "trainTotal": 37681,
+          "validationExamples": 5384,
+          "testExamples": 5382,
+          "bestEpoch": 94,
+          "bestValMacroF1": 0.49565915898837953,
+          "lastValMacroF1": 0.4920129896637297,
+          "trainingSeconds": 398.7859123319977,
+          "throughput": 9479.785172962234,
+          "featureRows": 35887,
+          "featureShape": "N×20",
+          "backboneUnchanged": true,
+          "splitFingerprint": "5541ce65ae3322903e7ee5642b7d830f02d55620d3c4c6100b2b4f3869360b7d"
+        }
+      ],
+      "source": {
+        "label": "Artefatos locais auditados das nove execuções clássicas Dense20",
+        "files": [
+          "outputs/classic-dense20/dense20_comparison.csv",
+          "outputs/classic-dense20/<dataset>/runs/<run>/manifest.json",
+          "outputs/classic-dense20/<dataset>/runs/<run>/artifacts/comparison.json",
+          "outputs/classic-dense20/<dataset>/runs/<run>/artifacts/test_metrics.json",
+          "outputs/classic-dense20/<dataset>/runs/<run>/logs/training_summary.json",
+          "outputs/classic-dense20/<dataset>/runs/<run>/artifacts/features20/manifest.json"
+        ],
+        "filters": [
+          "Somente runs com status completed, 100 épocas e seed 42"
+        ],
+        "evidenceFlow": [
+          {
+            "title": "Consolidação",
+            "detail": "O CSV consolidado foi reconciliado com comparison.json e test_metrics.json de cada dataset."
+          },
+          {
+            "title": "Treinamento",
+            "detail": "Históricos e training_summary.json forneceram época selecionada, tempo, throughput e hash do backbone."
+          },
+          {
+            "title": "Saída do experimento Dense20",
+            "detail": "Os manifests features20 confirmaram a saída N×20 produzida após Dense(20), LayerNorm e ReLU; ela não é a entrada reutilizável anterior à ponta densa."
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "label": "Macro-F1",
+            "definition": "Média aritmética do F1 calculado separadamente para cada classe; todas as classes têm o mesmo peso.",
+            "componentIds": [
+              "report-executive-summary",
+              "report-macro-f1-comparison",
+              "report-results-table"
+            ]
+          },
+          {
+            "label": "Mudança em pontos percentuais",
+            "definition": "100 × (Macro-F1 Dense20 − Macro-F1 original). Valor positivo favorece Dense20.",
+            "formula": "100 * (dense20MacroF1 - originalMacroF1)",
+            "componentIds": [
+              "report-executive-summary",
+              "report-macro-f1-comparison",
+              "report-results-table"
+            ]
+          },
+          {
+            "label": "Balanced accuracy",
+            "definition": "Média do recall por classe no teste final.",
+            "componentIds": [
+              "report-results-table"
+            ]
+          },
+          {
+            "label": "Melhor época",
+            "definition": "Época com maior Macro-F1 de validação; o teste foi executado uma única vez após recarregar esse checkpoint.",
+            "componentIds": [
+              "report-training-behavior",
+              "report-methods"
+            ]
+          },
+          {
+            "label": "Tempo de treino",
+            "definition": "Soma dos tempos medidos das 100 épocas; exclui preflight, avaliação e exportação.",
+            "componentIds": [
+              "report-training-cost"
+            ]
+          }
+        ]
+      },
+      "methods": [
+        {
+          "language": "text",
+          "code": "Para cada dataset: validar checkpoint/fingerprint; reconstruir split 70/15/15; treinar somente a cabeça Dense20 por 100 épocas; selecionar por val_macro_f1; testar uma vez; exportar a saída Dense20. A exportação reutilizável N×128 foi executada separadamente diretamente após o GlobalAveragePooling2D."
+        }
+      ]
+    },
+    "class_diagnostics": {
+      "rows": [
+        {"dataset":"CIFAR-10","worstClass":"cat","worstClassF1":0.5238879736408567,"topConfusion":"dog -> cat","topConfusionCount":187,"topConfusionRate":0.20777777777777778},
+        {"dataset":"CIFAR-100 coarse","worstClass":"small_mammals","worstClassF1":0.26583850931677017,"topConfusion":"medium_mammals -> large_carnivores","topConfusionCount":68,"topConfusionRate":0.1511111111111111},
+        {"dataset":"EMNIST Balanced","worstClass":"21","worstClassF1":0.5585365853658536,"topConfusion":"15 -> 40","topConfusionCount":156,"topConfusionRate":0.37142857142857144},
+        {"dataset":"Fashion-MNIST","worstClass":"6","worstClassF1":0.775491113189897,"topConfusion":"0 -> 6","topConfusionCount":107,"topConfusionRate":0.1019047619047619},
+        {"dataset":"FER2013","worstClass":"fear","worstClassF1":0.3357558139534884,"topConfusion":"sad -> neutral","topConfusionCount":197,"topConfusionRate":0.21624588364434688},
+        {"dataset":"GTSRB","worstClass":"32","worstClassF1":0.9722222222222222,"topConfusion":"2 -> 1","topConfusionCount":2,"topConfusionRate":0.006644518272425249},
+        {"dataset":"KMNIST","worstClass":"6","worstClassF1":0.9786628733997156,"topConfusion":"1 -> 6","topConfusionCount":8,"topConfusionRate":0.007619047619047619},
+        {"dataset":"MNIST","worstClass":"9","worstClassF1":0.9909047391096216,"topConfusion":"5 -> 3","topConfusionCount":5,"topConfusionRate":0.005279831045406547},
+        {"dataset":"SVHN","worstClass":"3","worstClassF1":0.9090909090909092,"topConfusion":"5 -> 3","topConfusionCount":59,"topConfusionRate":0.04244604316546763}
+      ],
+      "source": {
+        "label": "Diagnóstico por classe extraído das matrizes de confusão das nove execuções",
+        "files": ["outputs/classic-dense20/<dataset>/runs/<run>/artifacts/test_metrics.json"],
+        "evidenceFlow": [
+          {"title":"Classe mais difícil","detail":"Menor F1 entre as classes do dataset no teste final."},
+          {"title":"Confusão dominante","detail":"Maior célula fora da diagonal da matriz de confusão; taxa calculada sobre o suporte da classe verdadeira."}
+        ],
+        "metricDefinitions": [
+          {"label":"F1 da classe","definition":"F1 calculado para uma classe individual no teste final.","componentIds":["report-class-diagnostics"]},
+          {"label":"Taxa da confusão dominante","definition":"Contagem da maior confusão dirigida dividida pelo suporte da classe verdadeira.","componentIds":["report-class-diagnostics"]}
+        ]
+      },
+      "methods": [{"language":"text","code":"Para cada matriz: selecionar o menor per_class.f1 e a maior célula i != j; mapear índices pelos class_names do manifest."}]
+    },
+    "features128_exports": {
+      "rows": [
+        {
+          "datasets": 9,
+          "verifiedDatasets": 9,
+          "totalRows": 636046,
+          "featureWidth": 128,
+          "featureDtype": "float32",
+          "labelDtype": "int64",
+          "featureStorageMiB": 310.5726318359375,
+          "labelStorageMiB": 4.8559417724609375,
+          "telemetrySamples": 255,
+          "allValuesFinite": true,
+          "allLabelsMatchOriginalSplits": true,
+          "allBackbonesUnchanged": true,
+          "allFingerprintsMatched": true,
+          "extractionPoint": "block5_pool → GlobalAveragePooling2D",
+          "containsDenseLayers": false
+        }
+      ],
+      "source": {
+        "label": "Exportação auditada das features convolucionais N×128",
+        "files": [
+          "outputs/classic-dense20/features128_verification.json",
+          "outputs/classic-dense20/features128_manifest.json",
+          "outputs/classic-dense20/<dataset>/runs/<run>/artifacts/features128/manifest.json",
+          "outputs/classic-dense20/<dataset>/runs/<run>/artifacts/encoder128.keras",
+          "outputs/classic-dense20/<dataset>/runs/<run>/artifacts/features128/telemetry/<timestamp>/{hardware.json,samples.jsonl,summary.json}"
+        ],
+        "filters": [
+          "Somente amostras originais de treino, validação e teste; sem augmentation e sem shuffle"
+        ],
+        "evidenceFlow": [
+          {
+            "title": "Ponto de extração",
+            "detail": "O encoder termina no GlobalAveragePooling2D imediatamente após block5_pool e não contém Dense, LayerNorm ou ReLU."
+          },
+          {
+            "title": "Integridade",
+            "detail": "A auditoria reabriu todos os arrays, verificou shape N×128, dtype float32, finitude, hashes, fingerprints e igualdade byte a byte da ordem dos labels."
+          },
+          {
+            "title": "Telemetria",
+            "detail": "As nove extrações preservam inventário de hardware, amostras temporais e resumo de utilização."
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "label": "Features128",
+            "definition": "Vetor float32 de 128 valores produzido por GlobalAveragePooling2D sobre block5_pool, antes de qualquer camada densa.",
+            "componentIds": [
+              "report-metric-features",
+              "report-artifacts",
+              "report-conclusions"
+            ]
+          }
+        ]
+      },
+      "methods": [
+        {
+          "language": "text",
+          "code": "imagem → checkpoint FP32 congelado → block5_pool → GlobalAveragePooling2D → vetor float32[128]; exportar train/val/test originais em ordem determinística; verificar hashes, labels, fingerprints e pesos do backbone."
+        }
+      ]
+    },
+    "experiment_summary": {
+      "rows": [
+        {
+          "datasets": 9,
+          "completed": 9,
+          "improved": 7,
+          "regressed": 2,
+          "meanOriginalMacroF1": 0.8193922108655253,
+          "meanDense20MacroF1": 0.8223178711419413,
+          "meanChangePp": 0.2925660276415986,
+          "largestGainDataset": "EMNIST Balanced",
+          "largestGainPp": 1.1236657561524588,
+          "largestRegressionDataset": "Fashion-MNIST",
+          "largestRegressionPp": -0.0795302625497207,
+          "totalEpochHours": 3.315656492539445,
+          "gtsrbTimeShare": 0.4682465348488944,
+          "featureRows": 636046,
+          "featureStorageMiB": 48.529754638671875,
+          "labelStorageMiB": 4.8559417724609375,
+          "featureDimensions": 20,
+          "allBackbonesUnchanged": true,
+          "allFingerprintsMatched": true,
+          "seed": 42,
+          "batchSize": 128,
+          "epochsPerDataset": 100,
+          "extraAugmentationFraction": 0.5
+        }
+      ],
+      "source": {
+        "label": "Agregações reproduzíveis dos artefatos Dense20",
+        "files": [
+          "outputs/classic-dense20/dense20_comparison.csv",
+          "outputs/classic-dense20/**/training_summary.json",
+          "outputs/classic-dense20/**/features20/manifest.json"
+        ],
+        "evidenceFlow": [
+          {
+            "title": "Médias",
+            "detail": "Médias simples entre os nove datasets; cada dataset recebe peso igual."
+          },
+          {
+            "title": "Armazenamento",
+            "detail": "Soma dos tamanhos dos 27 arquivos de features e 27 arquivos de labels."
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "label": "Média entre datasets",
+            "definition": "Média não ponderada dos nove Macro-F1; não representa uma população combinada.",
+            "componentIds": [
+              "report-executive-summary",
+              "report-conclusions"
+            ]
+          },
+          {
+            "label": "Datasets melhorados",
+            "definition": "Quantidade de datasets em que Macro-F1 Dense20 foi maior que o Macro-F1 original.",
+            "componentIds": [
+              "report-executive-summary"
+            ]
+          }
+        ]
+      },
+      "methods": [
+        {
+          "language": "text",
+          "code": "meanChangePp = 100 × média(dense20MacroF1 − originalMacroF1); improved = contagem(changePp > 0)."
+        }
+      ]
+    }
+  },
+  "id": "report:6deb61d3-7221-4743-ba36-d4be63339769"
+}

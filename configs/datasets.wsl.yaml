@@ -1,0 +1,11 @@
+# Cópia nativa no WSL para evitar a penalidade de I/O de /mnt/c, sobretudo no GTSRB.
+datasets:
+  mnist: {adapter: mnist, root: /root/datasets-tcc/mnist}
+  fashion_mnist: {adapter: fashion_mnist, root: /root/datasets-tcc/fashion_mnist}
+  kmnist: {adapter: kmnist, root: /root/datasets-tcc/kmnist}
+  emnist_balanced: {adapter: emnist_balanced, root: /root/datasets-tcc/emnist_balanced}
+  cifar10: {adapter: cifar10, root: /root/datasets-tcc/cifar10}
+  cifar100_coarse: {adapter: cifar100_coarse, root: /root/datasets-tcc/cifar100_coarse}
+  svhn: {adapter: svhn, root: /root/datasets-tcc/svhn}
+  gtsrb: {adapter: gtsrb, root: /root/datasets-tcc/gtsrb}
+  fer2013: {adapter: fer2013, root: /root/datasets-tcc/fer2013}

@@ -4,9 +4,16 @@
 # Artefatos gerados pelo interpretador
 __pycache__/
 *.py[cod]
+.pytest_cache/
 
 # Dados locais e artefatos regeneráveis de benchmark
 datasets/
 outputs/
 artifacts/
 models/
+
+# Artefatos regeneráveis dos relatórios interativos
+reports/**/dist/
+reports/**/.data-app-assets/
+reports/**/.data-app-offline/
+reports/**/node_modules/
