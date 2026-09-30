@@ -50,6 +50,51 @@ nova ponta deve carregar os vetores com `numpy.load`, construir o modelo com
 split de teste para a avaliação final. A exportação também salva telemetria em
 `artifacts/features128/telemetry/`.
 
+### Ponta clássica 128 → 128(ReLU) → 20(tanh) → C
+
+O runner `classic_models.vector_dense20` treina diretamente sobre os vetores
+`features128`; ele não carrega imagens nem a CNN. A arquitetura fixa é:
+
+```text
+features128
+→ Dense(128, activation="relu")
+→ Dense(20)
+→ tanh
+→ Dense(C, activation=None)
+→ logits
+```
+
+No macOS, após clonar o repositório, instale o Git LFS e prepare o ambiente:
+
+```bash
+git lfs install
+git lfs pull
+python3 -m venv .venv-classical-128-20
+source .venv-classical-128-20/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements/classical-128-20-mac.txt
+```
+
+Valide os nove conjuntos sem treinar:
+
+```bash
+PYTHON_BIN="$PWD/.venv-classical-128-20/bin/python" \
+  bash scripts/run-classical-128-20-mac.sh --all --dry-run --fail-fast
+```
+
+Execute as nove rodadas de 100 épocas, com a barra de progresso do TensorFlow:
+
+```bash
+PYTHON_BIN="$PWD/.venv-classical-128-20/bin/python" \
+  bash scripts/run-classical-128-20-mac.sh --all --max-epochs 100 --fail-fast
+```
+
+Os resultados ficam em `outputs/classical-128-20-mac/<dataset>/seed-42/`.
+Use `--resume` no mesmo comando para retomar uma execução interrompida. Cada
+run salva `best.keras`, `final.keras`, `history.csv`, métricas, predições,
+matriz de confusão, tempos e amostras de telemetria de CPU, RAM, processo e
+disco. A telemetria NVIDIA é registrada somente quando `nvidia-smi` existe.
+
 O projeto tem quatro blocos pequenos e independentes:
 
 - `data_prep`: leitura local, split estratificado, normalização e balanceamento;
