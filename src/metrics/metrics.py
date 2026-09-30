@@ -1,4 +1,4 @@
-"""Classification metrics and Keras callbacks used by every benchmark run."""
+"""Classification metrics and Keras callbacks for classical runs."""
 
 from __future__ import annotations
 

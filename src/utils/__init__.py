@@ -1,1 +1,1 @@
-"""Shared configuration and command-line utilities."""
+"""Command-line entry points and atomic persistence helpers."""

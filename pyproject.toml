@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "tcc-benchmark"
 version = "0.1.0"
-description = "Núcleo compacto para dados e experimentos quânticos do TCC."
+description = "Pipeline reproduzível para preparação de dados e classificadores clássicos do TCC."
 requires-python = ">=3.12,<3.13"
 dependencies = [
   "numpy==2.0.2",
@@ -15,28 +15,18 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-tensorflow = ["tensorflow==2.18.1"]
-quantum = [
-  "torch==2.8.0",
-  "pennylane==0.44.1",
-  "pennylane-lightning==0.44.0",
-  "qiskit==2.3.0",
-  "qiskit-aer==0.17.2",
-  "qiskit-algorithms==0.4.0",
-  "qiskit-machine-learning==0.9.1",
-]
+classical = ["tensorflow==2.21.0"]
 dev = ["pytest>=8,<9"]
 
 [project.scripts]
 tcc-benchmark = "utils.cli:main"
-tcc-quantum-smoke = "quantum_models.smoke:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["classic_models*", "data_prep*", "metrics*", "quantum_models*", "utils*"]
+include = ["classic_models*", "data_prep*", "logs*", "metrics*", "utils*"]
 namespaces = true
 
 [tool.pytest.ini_options]

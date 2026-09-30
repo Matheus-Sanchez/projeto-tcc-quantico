@@ -1,1 +1,1 @@
-"""Classical CNN baseline components."""
+"""Frozen-backbone feature export and classical dense heads."""

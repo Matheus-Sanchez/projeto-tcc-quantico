@@ -1,1 +1,1 @@
-"""Local dataset adapters and deterministic preparation."""
+"""Local dataset adapters, registry configuration and deterministic preparation."""

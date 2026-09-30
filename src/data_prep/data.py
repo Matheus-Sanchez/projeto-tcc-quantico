@@ -20,6 +20,8 @@ from typing import Any, Iterable, Mapping, Sequence
 
 import numpy as np
 
+from utils.state import atomic_write_json
+
 try:  # Keep inspection/audit commands usable without the TF profile.
     import tensorflow as tf
 except Exception as exc:  # pragma: no cover - missing DLLs can raise OSError on Windows
@@ -1029,31 +1031,7 @@ class PreparedRunDatasets:
 
     def save_manifest(self, path: str | Path) -> Path:
         """Salva o manifesto JSON de metadados da execução de maneira atômica."""
-        from utils.experiment import atomic_write_json
         return atomic_write_json(path, self.metadata)
-
-
-def iter_torch_batches(dataset: Any, *, device: str | None = None) -> Any:
-    """Yield an NHWC ``tf.data.Dataset`` as PyTorch ``NCHW`` batches.
-
-    This is the only bridge needed by a PennyLane/Torch model. Qiskit-based
-    estimators can consume the same batches after calling ``.cpu().numpy()``.
-    Torch is imported lazily so dataset auditing and TensorFlow-only use stay
-    lightweight.
-    """
-
-    try:
-        import torch
-    except ImportError as exc:  # pragma: no cover - dependent on environment
-        raise RuntimeError("PyTorch não está instalado.") from exc
-    for images, labels in dataset:
-        images_np = images.numpy() if hasattr(images, "numpy") else np.asarray(images)
-        labels_np = labels.numpy() if hasattr(labels, "numpy") else np.asarray(labels)
-        features = torch.as_tensor(images_np, dtype=torch.float32).permute(0, 3, 1, 2)
-        targets = torch.as_tensor(labels_np, dtype=torch.long)
-        if device is not None:
-            features, targets = features.to(device), targets.to(device)
-        yield features, targets
 
 
 def prepare_run_datasets(

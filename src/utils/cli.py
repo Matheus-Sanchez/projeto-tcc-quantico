@@ -8,7 +8,11 @@ from pathlib import Path
 from typing import Sequence
 
 from data_prep.audit import audit_local_dataset, write_audit_report
-from .experiment import DATASET_ORDER, DEFAULT_DATASET_REGISTRY, DEFAULT_OUTPUT_ROOT, load_dataset_registry
+from data_prep.registry import DATASET_ORDER, DEFAULT_DATASET_REGISTRY, load_dataset_registry
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_OUTPUT_ROOT = PROJECT_ROOT / "outputs" / "tcc-benchmark"
 
 
 def _add_registry_argument(parser: argparse.ArgumentParser) -> None:

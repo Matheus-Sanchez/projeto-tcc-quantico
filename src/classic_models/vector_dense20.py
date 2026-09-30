@@ -28,7 +28,7 @@ import numpy as np
 
 from logs.telemetry import TelemetrySampler
 from metrics.metrics import EvaluationResult, ValidationMacroF1Callback, evaluate_model
-from utils.experiment import DATASET_ORDER
+from data_prep.registry import DATASET_ORDER
 from utils.state import atomic_write_bytes, atomic_write_json, atomic_write_text, config_fingerprint, utc_now
 
 
@@ -714,7 +714,7 @@ def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="python -m classic_models.vector_dense20",
         description=(
-            "Treina a ponta clássica 128→128(ReLU)→20(tanh)→C "
+            "Treina a ponta clássica 128 -> 128(ReLU) -> 20(tanh) -> C "
             "sobre features128 salvas."
         ),
     )

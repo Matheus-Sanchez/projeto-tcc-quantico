@@ -1,10 +1,4 @@
-"""Train a classical 20-feature head over one strictly frozen CNN backbone.
-
-This runner is intentionally independent from ``quantum_models``.  It reuses
-the completed FP32 checkpoints from the controlled classical campaign, keeps
-the convolutional extractor in inference mode, and trains only a small Keras
-classification head.
-"""
+"""Train a 20-feature classical head over a strictly frozen CNN backbone."""
 
 from __future__ import annotations
 
@@ -39,8 +33,8 @@ from data_prep.data import (
 )
 from logs.telemetry import TelemetrySampler
 from metrics.metrics import EvaluationResult, ValidationMacroF1Callback, evaluate_model
-from utils.experiment import DATASET_ORDER, DEFAULT_DATASET_REGISTRY, fingerprint, load_dataset_registry
-from utils.state import RunPaths, atomic_write_bytes, atomic_write_json, atomic_write_text
+from data_prep.registry import DATASET_ORDER, DEFAULT_DATASET_REGISTRY, load_dataset_registry
+from utils.state import RunPaths, atomic_write_bytes, atomic_write_json, atomic_write_text, config_fingerprint
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -376,7 +370,7 @@ def _config_payload(
 
 
 def _initialize_manifest(paths: RunPaths, config: Mapping[str, Any], split_fingerprint: str) -> dict[str, Any]:
-    config_hash = fingerprint(config)
+    config_hash = config_fingerprint(config)
     if paths.manifest.exists():
         existing = _read_json(paths.manifest)
         if existing.get("config_fingerprint") != config_hash:
