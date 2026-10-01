@@ -2,8 +2,10 @@
 # Keep array-backed datasets linked and copy the file-backed GTSRB to native WSL storage.
 set -euo pipefail
 
-source_root="${1:-/mnt/c/Users/matheus.sduda/repos/projeto-TCC/datasets}"
-target_root="${2:-/root/datasets-tcc}"
+script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+project_root="$(cd -- "$script_dir/.." && pwd)"
+source_root="${1:-$project_root/datasets}"
+target_root="${2:-${HOME}/datasets-tcc}"
 mkdir -p "$target_root"
 
 for name in mnist fashion_mnist kmnist emnist_balanced cifar10 cifar100_coarse svhn fer2013; do

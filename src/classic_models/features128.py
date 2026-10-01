@@ -494,7 +494,9 @@ def verify_exports(output_root: Path, datasets: Sequence[str]) -> dict[str, Any]
             feature_bytes += features_path.stat().st_size
             label_bytes += labels_path.stat().st_size
         telemetry = manifest.get("telemetry", {})
-        for key in ("hardware", "samples", "summary"):
+        # Per-sample logs can stay local; compact hardware and summary records
+        # are sufficient to validate the reusable feature export.
+        for key in ("hardware", "summary"):
             if not Path(str(telemetry.get(key, ""))).is_file():
                 raise Features128Error(f"Telemetria {key} ausente em {dataset}.")
         telemetry_samples += int(telemetry.get("sample_count", 0))

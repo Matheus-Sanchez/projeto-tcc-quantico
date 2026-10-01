@@ -49,9 +49,9 @@
   ],
   "created_at": "2026-09-29T21:04:16.412+00:00",
   "dataset": "gtsrb",
-  "dense20_run": "/mnt/c/Users/matheus.sduda/repos/projeto-TCC/outputs/classic-dense20/gtsrb/runs/gtsrb__dense20_fp32_aug05__seed-42",
+  "dense20_run": "outputs/classic-dense20/gtsrb/runs/gtsrb__dense20_fp32_aug05__seed-42",
   "elapsed_seconds": 45.03942104399903,
-  "encoder128": "/mnt/c/Users/matheus.sduda/repos/projeto-TCC/outputs/classic-dense20/gtsrb/runs/gtsrb__dense20_fp32_aug05__seed-42/artifacts/encoder128.keras",
+  "encoder128": "outputs/classic-dense20/gtsrb/runs/gtsrb__dense20_fp32_aug05__seed-42/artifacts/encoder128.keras",
   "encoder128_sha256": "ec4982a20ddaf3798102bc0ab862197dc2b7cd6973cd701330b33e95be752d3f",
   "feature_semantics": "Saída de block5_pool após GlobalAveragePooling2D; nenhuma camada densa incluída.",
   "feature_width": 128,
@@ -86,13 +86,13 @@
     "telemetry_interval_seconds": 1.0,
     "training": false
   },
-  "source_checkpoint": "/mnt/c/Users/matheus.sduda/repos/projeto-TCC/models/controlled-augmentation05-batch-activation/quantization/gtsrb/fp32/gtsrb/runs/gtsrb__unit_interval__all_raw__seed-42/checkpoints/best.keras",
+  "source_checkpoint": "models/controlled-augmentation05-batch-activation/quantization/gtsrb/fp32/gtsrb/runs/gtsrb__unit_interval__all_raw__seed-42/checkpoints/best.keras",
   "source_checkpoint_sha256": "3a7f155b6ad574bad8fe0d5a7e2d229237236bbd510125bb50aa78454af27b3a",
   "split_fingerprint": "3bffc0cf36b45aeb68bbbf910a1c3e4bddb3a5dd1f6280e4ab6ea67034d7ea58",
   "splits": {
     "test": {
       "examples": 5876,
-      "features": "/mnt/c/Users/matheus.sduda/repos/projeto-TCC/outputs/classic-dense20/gtsrb/runs/gtsrb__dense20_fp32_aug05__seed-42/artifacts/features128/test_features.npy",
+      "features": "outputs/classic-dense20/gtsrb/runs/gtsrb__dense20_fp32_aug05__seed-42/artifacts/features128/test_features.npy",
       "features_dtype": "float32",
       "features_sha256": "9d581022dcde56f21101324f38d32844bc038de9bb6408c58fe8209f7a350192",
       "features_shape": [
@@ -100,7 +100,7 @@
         128
       ],
       "indices_sha256": "0dfabcab1f8975297f56623c694d33e52eeb95c28fd15661cc47bd54a749f5ea",
-      "labels": "/mnt/c/Users/matheus.sduda/repos/projeto-TCC/outputs/classic-dense20/gtsrb/runs/gtsrb__dense20_fp32_aug05__seed-42/artifacts/features128/test_labels.npy",
+      "labels": "outputs/classic-dense20/gtsrb/runs/gtsrb__dense20_fp32_aug05__seed-42/artifacts/features128/test_labels.npy",
       "labels_dtype": "int64",
       "labels_sha256": "11eeb9499e285526f307d8e4e5f2c85faf9f8bf2a8a8f1d6abbb76a1ba4137a7",
       "labels_shape": [
@@ -109,7 +109,7 @@
     },
     "train": {
       "examples": 27489,
-      "features": "/mnt/c/Users/matheus.sduda/repos/projeto-TCC/outputs/classic-dense20/gtsrb/runs/gtsrb__dense20_fp32_aug05__seed-42/artifacts/features128/train_features.npy",
+      "features": "outputs/classic-dense20/gtsrb/runs/gtsrb__dense20_fp32_aug05__seed-42/artifacts/features128/train_features.npy",
       "features_dtype": "float32",
       "features_sha256": "190d3ed4dadacd43795a3d0f08e4d07ad69c96c049fc3f2c1b94ef71ec7ab966",
       "features_shape": [
@@ -117,7 +117,7 @@
         128
       ],
       "indices_sha256": "f998f94497b16721ec95a06ba48d52f7718c5306fbf270f0dcbc3e8400843efd",
-      "labels": "/mnt/c/Users/matheus.sduda/repos/projeto-TCC/outputs/classic-dense20/gtsrb/runs/gtsrb__dense20_fp32_aug05__seed-42/artifacts/features128/train_labels.npy",
+      "labels": "outputs/classic-dense20/gtsrb/runs/gtsrb__dense20_fp32_aug05__seed-42/artifacts/features128/train_labels.npy",
       "labels_dtype": "int64",
       "labels_sha256": "1eb86c7c60297aa0ea55f5c1e671b40aa7e431b802ddfc1869f926ead46892af",
       "labels_shape": [
@@ -126,7 +126,7 @@
     },
     "val": {
       "examples": 5905,
-      "features": "/mnt/c/Users/matheus.sduda/repos/projeto-TCC/outputs/classic-dense20/gtsrb/runs/gtsrb__dense20_fp32_aug05__seed-42/artifacts/features128/val_features.npy",
+      "features": "outputs/classic-dense20/gtsrb/runs/gtsrb__dense20_fp32_aug05__seed-42/artifacts/features128/val_features.npy",
       "features_dtype": "float32",
       "features_sha256": "498bdf57df5b515ad7e117b6e22d894527cbf5a2730259424c3ba44362f4df62",
       "features_shape": [
@@ -134,7 +134,7 @@
         128
       ],
       "indices_sha256": "8fec13411b2997a92491042c817d6de374bf2e04d48eee8db122afdc88c76fbd",
-      "labels": "/mnt/c/Users/matheus.sduda/repos/projeto-TCC/outputs/classic-dense20/gtsrb/runs/gtsrb__dense20_fp32_aug05__seed-42/artifacts/features128/val_labels.npy",
+      "labels": "outputs/classic-dense20/gtsrb/runs/gtsrb__dense20_fp32_aug05__seed-42/artifacts/features128/val_labels.npy",
       "labels_dtype": "int64",
       "labels_sha256": "05fa0f8a404fb4bd985ee0e04cf29b82d7174a6d27007b170a6db475d4f2163f",
       "labels_shape": [
@@ -144,9 +144,9 @@
   },
   "status": "completed",
   "telemetry": {
-    "hardware": "/mnt/c/Users/matheus.sduda/repos/projeto-TCC/outputs/classic-dense20/gtsrb/runs/gtsrb__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210331Z/hardware.json",
+    "hardware": "outputs/classic-dense20/gtsrb/runs/gtsrb__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210331Z/hardware.json",
     "sample_count": 52,
-    "samples": "/mnt/c/Users/matheus.sduda/repos/projeto-TCC/outputs/classic-dense20/gtsrb/runs/gtsrb__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210331Z/samples.jsonl",
-    "summary": "/mnt/c/Users/matheus.sduda/repos/projeto-TCC/outputs/classic-dense20/gtsrb/runs/gtsrb__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210331Z/summary.json"
+    "samples": "outputs/classic-dense20/gtsrb/runs/gtsrb__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210331Z/samples.jsonl",
+    "summary": "outputs/classic-dense20/gtsrb/runs/gtsrb__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210331Z/summary.json"
   }
 }

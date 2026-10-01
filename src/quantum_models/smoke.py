@@ -32,6 +32,7 @@ from logs.telemetry import TelemetrySampler
 from metrics.reporting import compute_classification_metrics, write_classification_report
 from utils.experiment import DATASET_ORDER, DEFAULT_DATASET_REGISTRY, atomic_write_json, load_dataset_registry
 
+from .metal_preflight import verify_tensorflow_gpu
 from .qcnn import N_FEATURES, PennyLaneQCNN
 from .qiskit_qcnn import QiskitQCNN
 
@@ -68,6 +69,7 @@ class SmokeSettings:
     preferred_dtype: str | None = "float32"
     preferred_activation: str | None = "relu"
     strict_model_profile: bool = False
+    require_tensorflow_gpu: bool = False
 
     def validate(self) -> None:
         if self.backend not in {"pennylane", "qiskit"}:
@@ -91,6 +93,8 @@ class SmokeSettings:
             raise ValueError("samples_per_class deve ser pelo menos 6 para manter treino/validação/teste.")
         if self.learning_rate <= 0:
             raise ValueError("learning_rate deve ser positiva.")
+        if not isinstance(self.require_tensorflow_gpu, bool):
+            raise ValueError("require_tensorflow_gpu deve ser booleano.")
 
 
 @dataclasses.dataclass(frozen=True)
@@ -994,6 +998,7 @@ def run_quantum_smoke(
             "mode": settings.mode,
             "dataset": dataset.name,
             "seed": settings.seed,
+            "require_tensorflow_gpu": settings.require_tensorflow_gpu,
             "started_at": time.time(),
         },
     )
@@ -1003,6 +1008,7 @@ def run_quantum_smoke(
         data_path=dataset.source_path,
     ).start()
     try:
+        tensorflow_preflight = verify_tensorflow_gpu() if settings.require_tensorflow_gpu else None
         extractor = load_frozen_feature_extractor(artifact)
         raw_samples, raw_labels = _training_samples(dataset)
         if settings.mode == "full":
@@ -1144,6 +1150,7 @@ def run_quantum_smoke(
             },
             "epoch_history": history,
             "settings": dataclasses.asdict(settings),
+            "tensorflow_preflight": tensorflow_preflight,
             "artifacts": {
                 **{key: str(path.resolve()) for key, path in training_paths.items()},
                 **{f"validation_{key}": str(path.resolve()) for key, path in validation_report.items()},
@@ -1235,6 +1242,11 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("--preferred-dtype", default="float32", help="Preferência de perfil; use 'any' para ignorar.")
     parser.add_argument("--preferred-activation", default="relu", help="Preferência de perfil; use 'any' para ignorar.")
     parser.add_argument("--strict-model-profile", action="store_true", help="Exige perfil exato de dtype e ativação.")
+    parser.add_argument(
+        "--require-tensorflow-gpu",
+        action="store_true",
+        help="Aborta antes da extração se um matmul TensorFlow estrito não executar em GPU.",
+    )
     parser.add_argument("--seed", default="random", help="Inteiro reprodutível ou 'random'.")
     args = parser.parse_args(argv)
     try:
@@ -1256,6 +1268,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         preferred_dtype=args.preferred_dtype,
         preferred_activation=args.preferred_activation,
         strict_model_profile=args.strict_model_profile,
+        require_tensorflow_gpu=args.require_tensorflow_gpu,
     )
     try:
         result = run_quantum_smoke(

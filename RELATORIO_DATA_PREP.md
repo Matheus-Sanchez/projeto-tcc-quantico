@@ -1,13 +1,15 @@
-# Relatório Técnico: Pipeline Determinístico de Dados (`src/data_prep.py`)
+# Relatório Técnico Histórico: Pipeline de Dados (`src/data_prep.py`)
 **Projeto**: TCC — Comparação de Cabeças de Classificação Clássicas e Quânticas (PyTorch / PennyLane / Qiskit)  
 **Módulo**: `src/data_prep.py`  
 **Data**: 2026-09-22  
+
+> Documento histórico baseado no snapshot analisado em 22/09/2026. Neste checkout, o pacote está em `src/data_prep/`; a função `to_torch_dataloader` citada adiante não existe no código atual. Consulte [src/data_prep/data.py](src/data_prep/data.py) para a implementação vigente.
 
 ---
 
 ## 1. Sumário Executivo
 
-O módulo [`src/data_prep.py`](file:///c:/Users/matheus.sduda/repos/projeto-TCC/src/data_prep.py) é o motor central de ingestão, particionamento, pré-processamento, balanceamento e aumento de dados do projeto de TCC. Ele foi concebido sob princípios estritos de **reprodutibilidade científica**, **prevenção de vazamento de dados (*data leakage*)** e **independência de formato em disco**.
+O módulo `src/data_prep.py`, conforme descrito no snapshot histórico, era o motor central de ingestão, particionamento, pré-processamento, balanceamento e aumento de dados do projeto de TCC. Ele foi concebido sob princípios estritos de **reprodutibilidade científica**, **prevenção de vazamento de dados (*data leakage*)** e **independência de formato em disco**.
 
 O pipeline suporta até 10 conjuntos de dados heterogêneos (como CIFAR-10, GTSRB, MNIST, EMNIST, SVHN, etc.), oferecendo:
 - Particionamento estratificado determinístico (70% treino, 15% validação, 15% teste) com rastreamento criptográfico via hash SHA-256 (*fingerprint*).
@@ -25,7 +27,7 @@ O módulo resolve os seguintes desafios experimentais:
 2. **Separação Estratificada Fiel**: Garante que todas as classes estejam representadas nas partições de treino, validação e teste com a proporção exata solicitada, mesmo em classes com pouquíssimas amostras.
 3. **Isolamento Experimental**: Impede qualquer tipo de vazamento de informação entre treino e avaliação. Amostras de validação e teste nunca são aumentadas, rebalanceadas ou utilizadas no cálculo de média e desvio padrão.
 4. **Gerenciamento de Recursos e Memória**: Avalia o impacto em memória antes de ativar cache em RAM (`.cache()`) e dimensiona dinamicamente os buffers de embaralhamento (*shuffle*) para evitar esgotamento de memória (*Out of Memory* / OOM).
-5. **Interoperabilidade**: Alimenta tanto modelos Keras clássicos quanto circuitos variacionais quânticos em PyTorch através da função ponte [`to_torch_dataloader`](file:///c:/Users/matheus.sduda/repos/projeto-TCC/src/data_prep.py#L747).
+5. **Interoperabilidade**: O snapshot histórico descrevia a integração com modelos Keras e circuitos variacionais em PyTorch por meio de `to_torch_dataloader` (linha 747 daquela versão). Essa função não está presente no checkout atual.
 
 ---
 
@@ -147,4 +149,3 @@ flowchart TD
    - Usar `convert_ppm_to_png("datasets/gtsrb")` para gerar versões PNG nativas de alta performance.
 2. **Serialização Opcional para TFRecords / HDF5**:
    - Para acelerar a leitura em discos magnéticos ou pastas compartilhadas de grande porte, considerar a exportação dos lotes decodificados para arquivos lineares unificados.
-

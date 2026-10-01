@@ -15,7 +15,10 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-tensorflow = ["tensorflow==2.18.1"]
+tensorflow = [
+  "tensorflow==2.18.1",
+  "tensorflow-metal==1.2.0 ; sys_platform == 'darwin' and platform_machine == 'arm64'",
+]
 quantum = [
   "torch==2.8.0",
   "pennylane==0.44.1",

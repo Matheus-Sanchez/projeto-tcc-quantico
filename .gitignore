@@ -1,5 +1,17 @@
 # Ambiente Python local
 .venv/
+/.venv-*/
+
+# Metadados e saídas locais de build Python
+*.egg-info/
+/build/
+/dist/
+
+# Configuração local e arquivos do sistema
+.env
+.env.*
+!.env.example
+.DS_Store
 
 # Artefatos gerados pelo interpretador
 __pycache__/
@@ -17,3 +29,6 @@ reports/**/dist/
 reports/**/.data-app-assets/
 reports/**/.data-app-offline/
 reports/**/node_modules/
+
+# Prévia interativa gerada localmente a partir do relatório versionado
+/reports/classical-dense20-results/

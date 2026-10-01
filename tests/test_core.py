@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from contextlib import nullcontext
 import json
 from pathlib import Path
 
@@ -13,6 +14,7 @@ from data_prep.data import balance_training_data, stratified_split_indices
 from metrics.reporting import compute_classification_metrics, write_classification_report
 from quantum_models.qcnn import N_FEATURES, N_PARAMETERS, PennyLaneQCNN, normalize_features
 from quantum_models.qiskit_qcnn import QiskitQCNN
+from quantum_models.metal_preflight import verify_tensorflow_gpu
 from quantum_models.smoke import FrozenModelError, SmokeSettings, select_frozen_model
 from utils.experiment import Experiment, load_dataset_registry
 
@@ -89,6 +91,62 @@ def test_split_and_model_selection_are_reproducible(tmp_path: Path) -> None:
             dataset="kmnist", model_root=tmp_path, preferred_dtype="float32", preferred_activation="relu", strict_profile=True
         )
     SmokeSettings(samples_per_class=6).validate()
+
+
+def test_tensorflow_metal_preflight_requires_a_real_gpu_kernel() -> None:
+    class Tensor:
+        device = "/job:localhost/replica:0/task:0/device:GPU:0"
+
+    class Config:
+        soft_placement = True
+
+        @staticmethod
+        def list_physical_devices(kind: str):
+            assert kind == "GPU"
+            return [type("Device", (), {"name": "/physical_device:GPU:0"})()]
+
+        @classmethod
+        def get_soft_device_placement(cls):
+            return cls.soft_placement
+
+        @classmethod
+        def set_soft_device_placement(cls, value: bool):
+            cls.soft_placement = value
+
+    class TensorFlow:
+        __version__ = "fixture"
+        float32 = object()
+        config = Config
+
+        @staticmethod
+        def ones(shape, dtype):
+            assert shape == (16, 16)
+            assert dtype is TensorFlow.float32
+            return object()
+
+        @staticmethod
+        def device(name: str):
+            assert name == "/GPU:0"
+            return nullcontext()
+
+        @staticmethod
+        def matmul(left, right):
+            assert left is right
+            return Tensor()
+
+    report = verify_tensorflow_gpu(TensorFlow)
+    assert report["matmul_device"].endswith("GPU:0")
+    assert Config.soft_placement is True
+
+    class NoGpuTensorFlow:
+        class config:
+            @staticmethod
+            def list_physical_devices(kind: str):
+                assert kind == "GPU"
+                return []
+
+    with pytest.raises(RuntimeError, match="Nenhuma GPU TensorFlow"):
+        verify_tensorflow_gpu(NoGpuTensorFlow)
 
 
 def test_pennylane_head_consumes_only_the_256_frozen_features() -> None:
