@@ -41,12 +41,9 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_MODEL_ROOT = PROJECT_ROOT / "models"
 DEFAULT_OUTPUT_ROOT = PROJECT_ROOT / "outputs" / "classic-dense20"
 FEATURE_LAYER_NAME = "block5_pool"
-SEED = 42
-BATCH_SIZE = 128
-LEARNING_RATE = 3e-4
-MAX_EPOCHS = 100
+from utils.experiment_config import SEED, BATCH_SIZE, LEARNING_RATE, MAX_EPOCHS, TENSORFLOW_VERSION, require_runtime
 EXTRA_FRACTION = 0.5
-EXPECTED_TENSORFLOW_VERSION = "2.21.0"
+EXPECTED_TENSORFLOW_VERSION = TENSORFLOW_VERSION
 EXPECTED_BALANCE_MODE = "all_raw"
 EXPECTED_NORMALIZATION = "unit_interval"
 EXPECTED_DTYPE = "float32"
@@ -428,6 +425,7 @@ def _require_tensorflow_runtime() -> Any:
         raise Dense20Error(
             f"TensorFlow {EXPECTED_TENSORFLOW_VERSION} é obrigatório; runtime atual={tf.__version__}."
         )
+    require_runtime()
     tf.keras.mixed_precision.set_global_policy(EXPECTED_DTYPE)
     gpus = tf.config.list_physical_devices("GPU")
     if not gpus:
@@ -454,6 +452,7 @@ def _runtime_preflight(tf: Any, output_root: Path) -> dict[str, Any]:
         "timestamp": _utc_now(),
         "python": sys.version,
         "tensorflow": tf.__version__,
+        "runtime_contract": require_runtime(),
         "dtype_policy": tf.keras.mixed_precision.global_policy().name,
         "gpus": [str(item) for item in gpus],
         "disk_free_gib": usage.free / 1024**3,

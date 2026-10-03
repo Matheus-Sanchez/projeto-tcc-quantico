@@ -1,8 +1,8 @@
-# TCC — benchmark clássico de classificação de imagens
+# TCC — benchmark clássico e híbrido de classificação de imagens
 
-Este repositório contém somente o pipeline clássico e reproduzível do TCC. A
-implementação experimental quântica e seus resultados foram removidos para
-serem redesenhados em um trabalho separado.
+Este repositório contém o pipeline clássico reproduzível e a cabeça híbrida
+TensorFlow com quatro circuitos locais de cinco qubits. Ambos reutilizam
+diretamente as mesmas features128 e os mesmos splits.
 
 ## Estrutura
 
@@ -10,12 +10,13 @@ serem redesenhados em um trabalho separado.
 src/
   data_prep/       carregamento, auditoria, registro e preparação dos dados
   classic_models/  backbone congelado, exportação features128 e cabeça densa
+  quantum_models/  PQCs, PennyLane/Qiskit locais, gradientes e diagnósticos
   metrics/         métricas e callbacks de avaliação
   logs/             telemetria de execução
   utils/            CLI e persistência atômica de artefatos
 configs/            registros dos datasets locais
 scripts/            atalhos para WSL e macOS
-tests/              testes unitários do fluxo clássico
+tests/              testes do fluxo clássico, circuitos, gradientes e retomada
 ```
 
 O fluxo de treinamento é fixo e explícito:
@@ -62,3 +63,28 @@ bash scripts/run-classical-128-20-mac.sh --all --dry-run
 
 Os resultados clássicos são regeneráveis e permanecem em `outputs/`, fora do
 versionamento para novas execuções.
+
+## Cabeça quântica local
+
+```bash
+python -m pip install -r requirements/quantum-local.txt
+python -m quantum_models.parallel_dense20 --all --backend both --dry-run
+python -m quantum_models.parallel_dense20 --all --backend both --smoke --resume
+python -m quantum_models.parallel_dense20 --all --backend both --resume
+```
+
+O treino completo executa 18 jobs, um por vez, na ordem dos nove datasets:
+PennyLane e depois Qiskit. Cada job usa quatro workers persistentes. `--smoke`
+usa uma época e um batch real, com avaliação reduzida; sua saída fica separada
+da matriz completa. O teste de custo usa um batch real antes do treinamento.
+
+O fluxo híbrido substitui somente a ativação tanh:
+
+```text
+features128 → Dense(128, ReLU) → Dense(20, linear)
+→ 4 × PQC(5 qubits, 3 repetições) → 20 expectativas Y → Dense(C, linear)
+```
+
+As três densas e os 180 ângulos quânticos começam do zero. Não se carregam
+pesos das cabeças clássicas. Treinamento, retomada, coleta e definições dos
+diagnósticos estão descritos em [docs/quantum-parallel.md](docs/quantum-parallel.md).

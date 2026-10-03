@@ -5,17 +5,25 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "tcc-benchmark"
 version = "0.1.0"
-description = "Pipeline reproduzível para preparação de dados e classificadores clássicos do TCC."
+description = "Pipeline reproduzível de dados e classificadores clássicos e híbridos do TCC."
 requires-python = ">=3.12,<3.13"
 dependencies = [
   "numpy==2.0.2",
   "Pillow==11.1.0",
   "PyYAML==6.0.2",
   "scipy==1.15.2",
+  "psutil>=5.9,<8",
 ]
 
 [project.optional-dependencies]
 classical = ["tensorflow==2.21.0"]
+quantum = [
+  "tensorflow==2.21.0",
+  "pennylane==0.45.1",
+  "qiskit==2.2.3",
+  "qiskit-aer==0.17.2",
+  "scikit-learn==1.6.1",
+]
 dev = ["pytest>=8,<9"]
 
 [project.scripts]
@@ -26,7 +34,7 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["classic_models*", "data_prep*", "logs*", "metrics*", "utils*"]
+include = ["classic_models*", "quantum_models*", "data_prep*", "logs*", "metrics*", "utils*"]
 namespaces = true
 
 [tool.pytest.ini_options]
