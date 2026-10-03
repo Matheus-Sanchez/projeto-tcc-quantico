@@ -1,4 +1,4 @@
-"""Strict TensorFlow/Metal readiness check used before frozen-CNN extraction."""
+"""Strict TensorFlow/Metal readiness check for optional Mac CNN extraction."""
 
 from __future__ import annotations
 
@@ -15,7 +15,7 @@ def verify_tensorflow_gpu(tensorflow: Any | None = None) -> dict[str, Any]:
     Apple Metal availability depends on the current macOS graphical session. A
     process can list a PluggableDevice and still fall back to CPU when the first
     GPU kernel is dispatched. This strict matmul catches both states before an
-    expensive feature extraction or QCNN run.
+    expensive CNN feature extraction.
     """
 
     if tensorflow is None:

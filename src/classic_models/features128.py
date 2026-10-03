@@ -48,7 +48,7 @@ from classic_models.dense20 import (
 )
 from data_prep.data import build_tf_dataset, select_samples, stratified_split_indices
 from logs.telemetry import TelemetrySampler
-from utils.experiment import DATASET_ORDER, DEFAULT_DATASET_REGISTRY
+from data_prep.registry import DATASET_ORDER, DEFAULT_DATASET_REGISTRY
 from utils.state import atomic_write_json
 
 

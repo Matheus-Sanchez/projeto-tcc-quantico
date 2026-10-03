@@ -54,6 +54,7 @@ class TelemetrySampler:
         disk_paths: Mapping[str, str | Path] | None = None,
         data_path: str | Path | None = None,
         process_id: int | None = None,
+        include_children: bool = False,
     ) -> None:
         if float(interval_seconds) <= 0:
             raise ValueError("interval_seconds deve ser positivo.")
@@ -67,6 +68,8 @@ class TelemetrySampler:
         self._samples: list[dict[str, Any]] = []
         self._started_at: float | None = None
         self._process: Any | None = None
+        self.include_children = bool(include_children)
+        self._child_processes: dict[int, Any] = {}
         self._nvidia_smi = shutil.which("nvidia-smi")
         paths = {"output": self.output_dir}
         if data_path is not None:
@@ -199,7 +202,7 @@ class TelemetrySampler:
         try:
             memory = self._process.memory_info()
             io = self._process.io_counters() if hasattr(self._process, "io_counters") else None
-            return {
+            result = {
                 "available": True,
                 "cpu_percent": _safe_float(self._process.cpu_percent(None)),
                 "rss_mb": memory.rss / _MEBIBYTE,
@@ -209,6 +212,31 @@ class TelemetrySampler:
                 "read_mb": getattr(io, "read_bytes", 0) / _MEBIBYTE if io is not None else None,
                 "write_mb": getattr(io, "write_bytes", 0) / _MEBIBYTE if io is not None else None,
             }
+            if self.include_children:
+                children = []
+                alive = set()
+                for child in self._process.children(recursive=True):
+                    try:
+                        alive.add(child.pid)
+                        cached = self._child_processes.get(child.pid)
+                        if cached is None or cached.create_time() != child.create_time():
+                            self._child_processes[child.pid] = child
+                            cached = child
+                        memory_info = cached.memory_info()
+                        children.append({"pid": cached.pid, "name": cached.name(),
+                                         "cpu_percent": _safe_float(cached.cpu_percent(None)),
+                                         "rss_mb": memory_info.rss / _MEBIBYTE,
+                                         "threads": int(cached.num_threads())})
+                    except _PSUTIL_ERRORS:
+                        continue
+                self._child_processes = {pid: value for pid, value in self._child_processes.items()
+                                         if pid in alive}
+                result["children"] = children
+                result["children_count"] = len(children)
+                result["tree_rss_mb"] = result["rss_mb"] + sum(c["rss_mb"] for c in children)
+                result["tree_cpu_percent"] = (result["cpu_percent"] or 0) + sum(
+                    c["cpu_percent"] or 0 for c in children)
+            return result
         except _PSUTIL_ERRORS:
             return {"available": False}
 

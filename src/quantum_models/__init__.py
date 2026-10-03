@@ -1,6 +1,5 @@
-"""Hybrid frozen-CNN and QCNN model components."""
+"""Local quantum vector heads.
 
-from .qcnn import N_FEATURES, N_PARAMETERS, N_QUBITS, PennyLaneQCNN
-from .qiskit_qcnn import QiskitQCNN
-
-__all__ = ["N_FEATURES", "N_PARAMETERS", "N_QUBITS", "PennyLaneQCNN", "QiskitQCNN"]
+Keep this module free of TensorFlow imports: simulation workers use spawn and
+must never initialize a second TensorFlow runtime.
+"""
