@@ -28,20 +28,39 @@ dados locais → split estratificado → backbone FP32 congelado
 
 ## Instalação
 
-Use Python 3.12 e crie um ambiente virtual na raiz do projeto:
+O runtime comum está fixado em Python 3.12.3 e os pacotes usam
+`requirements/quantum-verified-lock.txt` como lock compartilhado pelo Mac e
+pelo Windows/WSL. No macOS Apple Silicon, instale `uv` e prepare o ambiente:
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate            # Linux/macOS
-# .venv\Scripts\Activate.ps1         # PowerShell
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
+brew install uv git-lfs
+git lfs install --local
+git lfs pull
+bash scripts/setup-macos.sh
+source .venv/bin/activate
 ```
 
-No WSL com NVIDIA, use `requirements/classic-wsl-gpu.txt` e execute os
-comandos por `scripts/wsl-classic-env.sh`. No macOS, use o perfil
-`requirements/classical-128-20-mac.txt` para treinar a cabeça sobre vetores já
-exportados.
+O perfil `requirements/classical-128-20-mac.txt` instala o mesmo lock do
+ambiente Windows/WSL. No Mac, TensorFlow e os simuladores quânticos executam em
+CPU; o perfil `requirements/classic-wsl-gpu.txt` acrescenta CUDA no WSL. Use os
+scripts `run-*-all.sh` somente dentro do WSL; eles apontam para caminhos e
+ambiente Linux.
+
+O relatório web usa Node.js 24.21.0, fixado em
+`reports/dense20-classic-report/.nvmrc`. Com `nvm` instalado pelo Homebrew:
+
+```bash
+brew install nvm
+mkdir -p "$HOME/.nvm"
+export NVM_DIR="$HOME/.nvm"
+source "$(brew --prefix nvm)/nvm.sh"
+cd reports/dense20-classic-report
+nvm install
+npm ci
+npm run dev -- --host 127.0.0.1
+```
+
+O Vite exibirá no terminal o endereço local do relatório.
 
 ## Uso
 
@@ -52,13 +71,31 @@ baixa datasets.
 # conferir configuração e integridade dos dados locais
 tcc-benchmark datasets
 tcc-benchmark audit --all --labels-only
+```
 
-# validar o pipeline sem treinar
+Windows/WSL com NVIDIA:
+
+```bash
 bash scripts/run-dense20-all.sh --dry-run
 bash scripts/run-features128-all.sh --verify-only
+```
 
-# treinar a cabeça vetorial a partir de features128 existentes
+macOS com os vetores locais:
+
+```bash
 bash scripts/run-classical-128-20-mac.sh --all --dry-run
+```
+
+Para treinar a cabeça vetorial de verdade, remova `--dry-run`:
+
+```bash
+bash scripts/run-classical-128-20-mac.sh --all
+```
+
+Para executar o ensaio quântico reduzido nos dois simuladores locais:
+
+```bash
+python -m quantum_models.parallel_dense20 --all --backend both --smoke --resume
 ```
 
 Os resultados clássicos são regeneráveis e permanecem em `outputs/`, fora do
@@ -76,10 +113,9 @@ ambientes e métricas históricos sem misturá-los aos treinos da nova cabeça.
 ## Cabeça quântica local
 
 ```bash
-python -m pip install -r requirements/quantum-local.txt
-python -m quantum_models.parallel_dense20 --all --backend both --dry-run
-python -m quantum_models.parallel_dense20 --all --backend both --smoke --resume
-python -m quantum_models.parallel_dense20 --all --backend both --resume
+.venv/bin/python -m quantum_models.parallel_dense20 --all --backend both --dry-run
+.venv/bin/python -m quantum_models.parallel_dense20 --all --backend both --smoke --resume
+.venv/bin/python -m quantum_models.parallel_dense20 --all --backend both --resume
 ```
 
 O treino completo executa 18 jobs, um por vez, na ordem dos nove datasets:

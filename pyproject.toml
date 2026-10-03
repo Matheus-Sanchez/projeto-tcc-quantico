@@ -1,18 +1,18 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools==84.0.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "tcc-benchmark"
 version = "0.1.0"
 description = "Pipeline reproduzível de dados e classificadores clássicos e híbridos do TCC."
-requires-python = ">=3.12,<3.13"
+requires-python = "==3.12.3"
 dependencies = [
   "numpy==2.0.2",
   "Pillow==11.1.0",
   "PyYAML==6.0.2",
   "scipy==1.15.2",
-  "psutil>=5.9,<8",
+  "psutil==7.2.2",
 ]
 
 [project.optional-dependencies]
@@ -24,7 +24,7 @@ quantum = [
   "qiskit-aer==0.17.2",
   "scikit-learn==1.6.1",
 ]
-dev = ["pytest>=8,<9"]
+dev = ["pytest==8.3.5"]
 
 [project.scripts]
 tcc-benchmark = "utils.cli:main"

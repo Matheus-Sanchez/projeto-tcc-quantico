@@ -59,8 +59,8 @@ def runtime_versions(*, quantum: bool = False) -> dict[str, Any]:
             actual[name] = None
     errors = [f"{name}: esperado {version}, encontrado {actual[name]}"
               for name, version in expected.items() if actual[name] != version]
-    if sys.version_info[:2] != (3, 12):
-        errors.append(f"Python 3.12 obrigatório; encontrado {sys.version.split()[0]}")
+    if sys.version_info[:3] != (3, 12, 3):
+        errors.append(f"Python 3.12.3 obrigatório; encontrado {sys.version.split()[0]}")
     return {"python": sys.version, "packages": actual, "expected": expected,
             "ok": not errors, "errors": errors}
 
