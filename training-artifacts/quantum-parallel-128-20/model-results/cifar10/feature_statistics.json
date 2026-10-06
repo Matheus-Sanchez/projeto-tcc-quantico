@@ -1,0 +1,187 @@
+{
+  "hashes": {
+    "test_features.npy": "638df2bd7bdae7b5de0064bf14e05f453072f84a4cb948a1bdd7d46a792f069d",
+    "test_labels.npy": "f4f168d829d636a90ccff816611fdc6aea6cb5318612886faddd2370e3f4457c",
+    "train_features.npy": "f4a9a4860f5fd3ab175ef932aa444fde07ae45e2bf2f8a4645daa846b240fc08",
+    "train_labels.npy": "5f51e8b24128ceac7c61c8bed934c3da3ba2009994cd766d3533c9bd4e517ea2",
+    "val_features.npy": "60574bbab4bb27e443e4dba094ae3d67a06153602ec45b834aa4285a65d7a8b3",
+    "val_labels.npy": "d21615467a745f618f1360d9e16fc1226c88cdb209863447cdba393df6f7121a"
+  },
+  "source_manifest": {
+    "features_manifest": {
+      "backbone_unchanged": true,
+      "backbone_weights_after": "f525154d2df4a2bab101ba900d2b0e9e4d7d1768820cb592bf8f78de3d921da0",
+      "backbone_weights_before": "f525154d2df4a2bab101ba900d2b0e9e4d7d1768820cb592bf8f78de3d921da0",
+      "class_names": [
+        "airplane",
+        "automobile",
+        "bird",
+        "cat",
+        "deer",
+        "dog",
+        "frog",
+        "horse",
+        "ship",
+        "truck"
+      ],
+      "created_at": "2026-09-29T21:02:46.773+00:00",
+      "dataset": "cifar10",
+      "dense20_run": "outputs/classic-dense20/cifar10/runs/cifar10__dense20_fp32_aug05__seed-42",
+      "elapsed_seconds": 13.802594586999476,
+      "encoder128": "outputs/classic-dense20/cifar10/runs/cifar10__dense20_fp32_aug05__seed-42/artifacts/encoder128.keras",
+      "encoder128_sha256": "9e7e47292bd17166fd1ad72a14d964dc4bbd2538e65aa20609e33912bb408d37",
+      "feature_semantics": "Saída de block5_pool após GlobalAveragePooling2D; nenhuma camada densa incluída.",
+      "feature_width": 128,
+      "model_profile": {
+        "feature_shape": [
+          null,
+          1,
+          1,
+          128
+        ],
+        "input_shape": [
+          null,
+          64,
+          64,
+          3
+        ]
+      },
+      "schema_version": 1,
+      "settings": {
+        "augmentation": false,
+        "batch_size": 128,
+        "deterministic": true,
+        "feature_definition": [
+          "block5_pool",
+          "GlobalAveragePooling2D"
+        ],
+        "feature_width": 128,
+        "normalization": "unit_interval",
+        "output_dtype": "float32",
+        "seed": 42,
+        "shuffle": false,
+        "telemetry_interval_seconds": 1.0,
+        "training": false
+      },
+      "source_checkpoint": "models/controlled-augmentation05-batch-activation/quantization/cifar10/fp32/cifar10/runs/cifar10__unit_interval__all_raw__seed-42/checkpoints/best.keras",
+      "source_checkpoint_sha256": "dca6807f64d617c583c3a1dd3c82bcc7ac8313a04c86ac6938c088c40afa341d",
+      "split_fingerprint": "48145c3e2cc47bcc727ce18d9dcdfd00a7a3b8e638b53fdf41382a508562af83",
+      "splits": {
+        "test": {
+          "examples": 9000,
+          "features": "outputs/classic-dense20/cifar10/runs/cifar10__dense20_fp32_aug05__seed-42/artifacts/features128/test_features.npy",
+          "features_dtype": "float32",
+          "features_sha256": "638df2bd7bdae7b5de0064bf14e05f453072f84a4cb948a1bdd7d46a792f069d",
+          "features_shape": [
+            9000,
+            128
+          ],
+          "indices_sha256": "dca12e8b0efb3ceca56fcb847a03a517a5774a06ef19b710fae162c8f321d3c0",
+          "labels": "outputs/classic-dense20/cifar10/runs/cifar10__dense20_fp32_aug05__seed-42/artifacts/features128/test_labels.npy",
+          "labels_dtype": "int64",
+          "labels_sha256": "f4f168d829d636a90ccff816611fdc6aea6cb5318612886faddd2370e3f4457c",
+          "labels_shape": [
+            9000
+          ]
+        },
+        "train": {
+          "examples": 42000,
+          "features": "outputs/classic-dense20/cifar10/runs/cifar10__dense20_fp32_aug05__seed-42/artifacts/features128/train_features.npy",
+          "features_dtype": "float32",
+          "features_sha256": "f4a9a4860f5fd3ab175ef932aa444fde07ae45e2bf2f8a4645daa846b240fc08",
+          "features_shape": [
+            42000,
+            128
+          ],
+          "indices_sha256": "7d179e6330d4b82395d6b4a1c1151bc4ed1241b04908cdf3a3bec4453e8c7a08",
+          "labels": "outputs/classic-dense20/cifar10/runs/cifar10__dense20_fp32_aug05__seed-42/artifacts/features128/train_labels.npy",
+          "labels_dtype": "int64",
+          "labels_sha256": "5f51e8b24128ceac7c61c8bed934c3da3ba2009994cd766d3533c9bd4e517ea2",
+          "labels_shape": [
+            42000
+          ]
+        },
+        "val": {
+          "examples": 9000,
+          "features": "outputs/classic-dense20/cifar10/runs/cifar10__dense20_fp32_aug05__seed-42/artifacts/features128/val_features.npy",
+          "features_dtype": "float32",
+          "features_sha256": "60574bbab4bb27e443e4dba094ae3d67a06153602ec45b834aa4285a65d7a8b3",
+          "features_shape": [
+            9000,
+            128
+          ],
+          "indices_sha256": "f4b94747b16291fc23b999b580db266a0f4a1fedfddc12ca5fb9373c2ac3aeac",
+          "labels": "outputs/classic-dense20/cifar10/runs/cifar10__dense20_fp32_aug05__seed-42/artifacts/features128/val_labels.npy",
+          "labels_dtype": "int64",
+          "labels_sha256": "d21615467a745f618f1360d9e16fc1226c88cdb209863447cdba393df6f7121a",
+          "labels_shape": [
+            9000
+          ]
+        }
+      },
+      "status": "completed",
+      "telemetry": {
+        "hardware": "outputs/classic-dense20/cifar10/runs/cifar10__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210232Z/hardware.json",
+        "sample_count": 22,
+        "samples": "outputs/classic-dense20/cifar10/runs/cifar10__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210232Z/samples.jsonl",
+        "summary": "outputs/classic-dense20/cifar10/runs/cifar10__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210232Z/summary.json"
+      }
+    },
+    "features_manifest_path": "<local-path-redacted>",
+    "source_run_id": null,
+    "source_run_manifest": null
+  },
+  "statistics": {
+    "test": {
+      "dtype": "float32",
+      "examples": 9000,
+      "inf_count": 0,
+      "label_dtype": "int64",
+      "label_max": 9,
+      "label_min": 0,
+      "max": 2.256898880004883,
+      "mean": -0.013460905764605386,
+      "min": -0.27765920758247375,
+      "nan_count": 0,
+      "shape": [
+        9000,
+        128
+      ],
+      "std": 0.13477738016283033
+    },
+    "train": {
+      "dtype": "float32",
+      "examples": 42000,
+      "inf_count": 0,
+      "label_dtype": "int64",
+      "label_max": 9,
+      "label_min": 0,
+      "max": 2.406877040863037,
+      "mean": -0.012903352321761883,
+      "min": -0.27826064825057983,
+      "nan_count": 0,
+      "shape": [
+        42000,
+        128
+      ],
+      "std": 0.1362088221941603
+    },
+    "val": {
+      "dtype": "float32",
+      "examples": 9000,
+      "inf_count": 0,
+      "label_dtype": "int64",
+      "label_max": 9,
+      "label_min": 0,
+      "max": 2.276895046234131,
+      "mean": -0.013612435113408145,
+      "min": -0.2776666581630707,
+      "nan_count": 0,
+      "shape": [
+        9000,
+        128
+      ],
+      "std": 0.13452026303083733
+    }
+  }
+}

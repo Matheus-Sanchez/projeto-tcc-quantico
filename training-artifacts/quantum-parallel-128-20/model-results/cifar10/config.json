@@ -1,0 +1,618 @@
+{
+  "backend": "pennylane",
+  "batch_size": 128,
+  "checkpoint_metric": "val_macro_f1",
+  "circuit": {
+    "branches": 4,
+    "cnot_per_branch": 15,
+    "depth_per_branch": 20,
+    "elementary_gates_per_branch": 65,
+    "embedding": "RX(raw Dense20 output in radians), once",
+    "gates": [
+      {
+        "gate": "RX",
+        "input": 0,
+        "wire": 0
+      },
+      {
+        "gate": "RX",
+        "input": 1,
+        "wire": 1
+      },
+      {
+        "gate": "RX",
+        "input": 2,
+        "wire": 2
+      },
+      {
+        "gate": "RX",
+        "input": 3,
+        "wire": 3
+      },
+      {
+        "gate": "RX",
+        "input": 4,
+        "wire": 4
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          0,
+          0,
+          0
+        ],
+        "wire": 0
+      },
+      {
+        "gate": "RY",
+        "weight": [
+          0,
+          0,
+          1
+        ],
+        "wire": 0
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          0,
+          0,
+          2
+        ],
+        "wire": 0
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          0,
+          1,
+          0
+        ],
+        "wire": 1
+      },
+      {
+        "gate": "RY",
+        "weight": [
+          0,
+          1,
+          1
+        ],
+        "wire": 1
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          0,
+          1,
+          2
+        ],
+        "wire": 1
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          0,
+          2,
+          0
+        ],
+        "wire": 2
+      },
+      {
+        "gate": "RY",
+        "weight": [
+          0,
+          2,
+          1
+        ],
+        "wire": 2
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          0,
+          2,
+          2
+        ],
+        "wire": 2
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          0,
+          3,
+          0
+        ],
+        "wire": 3
+      },
+      {
+        "gate": "RY",
+        "weight": [
+          0,
+          3,
+          1
+        ],
+        "wire": 3
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          0,
+          3,
+          2
+        ],
+        "wire": 3
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          0,
+          4,
+          0
+        ],
+        "wire": 4
+      },
+      {
+        "gate": "RY",
+        "weight": [
+          0,
+          4,
+          1
+        ],
+        "wire": 4
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          0,
+          4,
+          2
+        ],
+        "wire": 4
+      },
+      {
+        "control": 0,
+        "gate": "CX",
+        "layer": 0,
+        "target": 1
+      },
+      {
+        "control": 1,
+        "gate": "CX",
+        "layer": 0,
+        "target": 2
+      },
+      {
+        "control": 2,
+        "gate": "CX",
+        "layer": 0,
+        "target": 3
+      },
+      {
+        "control": 3,
+        "gate": "CX",
+        "layer": 0,
+        "target": 4
+      },
+      {
+        "control": 4,
+        "gate": "CX",
+        "layer": 0,
+        "target": 0
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          1,
+          0,
+          0
+        ],
+        "wire": 0
+      },
+      {
+        "gate": "RY",
+        "weight": [
+          1,
+          0,
+          1
+        ],
+        "wire": 0
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          1,
+          0,
+          2
+        ],
+        "wire": 0
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          1,
+          1,
+          0
+        ],
+        "wire": 1
+      },
+      {
+        "gate": "RY",
+        "weight": [
+          1,
+          1,
+          1
+        ],
+        "wire": 1
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          1,
+          1,
+          2
+        ],
+        "wire": 1
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          1,
+          2,
+          0
+        ],
+        "wire": 2
+      },
+      {
+        "gate": "RY",
+        "weight": [
+          1,
+          2,
+          1
+        ],
+        "wire": 2
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          1,
+          2,
+          2
+        ],
+        "wire": 2
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          1,
+          3,
+          0
+        ],
+        "wire": 3
+      },
+      {
+        "gate": "RY",
+        "weight": [
+          1,
+          3,
+          1
+        ],
+        "wire": 3
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          1,
+          3,
+          2
+        ],
+        "wire": 3
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          1,
+          4,
+          0
+        ],
+        "wire": 4
+      },
+      {
+        "gate": "RY",
+        "weight": [
+          1,
+          4,
+          1
+        ],
+        "wire": 4
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          1,
+          4,
+          2
+        ],
+        "wire": 4
+      },
+      {
+        "control": 0,
+        "gate": "CX",
+        "layer": 1,
+        "target": 2
+      },
+      {
+        "control": 1,
+        "gate": "CX",
+        "layer": 1,
+        "target": 3
+      },
+      {
+        "control": 2,
+        "gate": "CX",
+        "layer": 1,
+        "target": 4
+      },
+      {
+        "control": 3,
+        "gate": "CX",
+        "layer": 1,
+        "target": 0
+      },
+      {
+        "control": 4,
+        "gate": "CX",
+        "layer": 1,
+        "target": 1
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          2,
+          0,
+          0
+        ],
+        "wire": 0
+      },
+      {
+        "gate": "RY",
+        "weight": [
+          2,
+          0,
+          1
+        ],
+        "wire": 0
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          2,
+          0,
+          2
+        ],
+        "wire": 0
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          2,
+          1,
+          0
+        ],
+        "wire": 1
+      },
+      {
+        "gate": "RY",
+        "weight": [
+          2,
+          1,
+          1
+        ],
+        "wire": 1
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          2,
+          1,
+          2
+        ],
+        "wire": 1
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          2,
+          2,
+          0
+        ],
+        "wire": 2
+      },
+      {
+        "gate": "RY",
+        "weight": [
+          2,
+          2,
+          1
+        ],
+        "wire": 2
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          2,
+          2,
+          2
+        ],
+        "wire": 2
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          2,
+          3,
+          0
+        ],
+        "wire": 3
+      },
+      {
+        "gate": "RY",
+        "weight": [
+          2,
+          3,
+          1
+        ],
+        "wire": 3
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          2,
+          3,
+          2
+        ],
+        "wire": 3
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          2,
+          4,
+          0
+        ],
+        "wire": 4
+      },
+      {
+        "gate": "RY",
+        "weight": [
+          2,
+          4,
+          1
+        ],
+        "wire": 4
+      },
+      {
+        "gate": "RZ",
+        "weight": [
+          2,
+          4,
+          2
+        ],
+        "wire": 4
+      },
+      {
+        "control": 0,
+        "gate": "CX",
+        "layer": 2,
+        "target": 3
+      },
+      {
+        "control": 1,
+        "gate": "CX",
+        "layer": 2,
+        "target": 4
+      },
+      {
+        "control": 2,
+        "gate": "CX",
+        "layer": 2,
+        "target": 0
+      },
+      {
+        "control": 3,
+        "gate": "CX",
+        "layer": 2,
+        "target": 1
+      },
+      {
+        "control": 4,
+        "gate": "CX",
+        "layer": 2,
+        "target": 2
+      }
+    ],
+    "groups": [
+      [
+        0,
+        5
+      ],
+      [
+        5,
+        10
+      ],
+      [
+        10,
+        15
+      ],
+      [
+        15,
+        20
+      ]
+    ],
+    "logical_evaluations_per_training_example": 404,
+    "noise_insertion": "after RX, after each complete RZ-RY-RZ triplet, and after each CNOT on control then target",
+    "noise_profile": {
+      "amplitude_damping": 0.001,
+      "cnot_per_qubit_depolarizing": 0.01,
+      "one_qubit_depolarizing": 0.002,
+      "phase_damping": 0.001
+    },
+    "observable": "PauliY on wires 0..4",
+    "parameters": 180,
+    "parameters_per_branch": 45,
+    "qubits_per_branch": 5,
+    "ranges": [
+      1,
+      2,
+      3
+    ],
+    "repetitions": 3,
+    "weight_shape": [
+      4,
+      3,
+      5,
+      3
+    ],
+    "wire_order": "q0 is the leftmost bit and most significant state axis"
+  },
+  "dataset": "cifar10",
+  "early_stopping": false,
+  "effective_epochs": 100,
+  "effective_train_examples": 42000,
+  "experiment": "quantum_128_relu_20_parallel_pqc_features128",
+  "gradient": "parameter_shift_plus_minus_pi_over_2_inputs_and_weights",
+  "hidden_activation": "parallel_pqc20",
+  "hidden_units": 20,
+  "input_features": 128,
+  "learning_rate": 0.0003,
+  "lr_scheduler": false,
+  "max_epochs": 100,
+  "mode": "full",
+  "num_classes": 10,
+  "optimizer": "adam",
+  "precision": "float32",
+  "projection_activation": "relu",
+  "projection_units": 128,
+  "schema_version": 1,
+  "seed": 42,
+  "shuffle": "NumPy SeedSequence([seed, epoch_zero_based]); deterministic full permutation",
+  "simulation_batch": 256,
+  "simulation_precision": "float64/complex128",
+  "source_feature_hashes": {
+    "test_features.npy": "638df2bd7bdae7b5de0064bf14e05f453072f84a4cb948a1bdd7d46a792f069d",
+    "test_labels.npy": "f4f168d829d636a90ccff816611fdc6aea6cb5318612886faddd2370e3f4457c",
+    "train_features.npy": "f4a9a4860f5fd3ab175ef932aa444fde07ae45e2bf2f8a4645daa846b240fc08",
+    "train_labels.npy": "5f51e8b24128ceac7c61c8bed934c3da3ba2009994cd766d3533c9bd4e517ea2",
+    "val_features.npy": "60574bbab4bb27e443e4dba094ae3d67a06153602ec45b834aa4285a65d7a8b3",
+    "val_labels.npy": "d21615467a745f618f1360d9e16fc1226c88cdb209863447cdba393df6f7121a"
+  },
+  "split_fingerprint": "48145c3e2cc47bcc727ce18d9dcdfd00a7a3b8e638b53fdf41382a508562af83",
+  "telemetry_interval_seconds": 5.0,
+  "transformations": {
+    "augmentation": false,
+    "feature_selection": false,
+    "normalization": false,
+    "pca": false,
+    "scaler": false
+  },
+  "workers": 4
+}

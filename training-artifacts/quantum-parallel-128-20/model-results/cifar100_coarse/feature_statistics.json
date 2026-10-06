@@ -1,0 +1,197 @@
+{
+  "hashes": {
+    "test_features.npy": "cf6c453f0e82040bb471510e891e2e601f29a9b69abb1e38bfd4d55bb9cef11e",
+    "test_labels.npy": "ccd0062082f185aa8ed1620c99738e2f22c42a135ed89bf5dbabef8e4793557d",
+    "train_features.npy": "41a7973004371f97257cbba766f4202ffc934bd92e6e5883bfe9123faf56c289",
+    "train_labels.npy": "c98a479f7dd88070fa9dc5cb4f413944d711ebb6450367505b59a734334502d5",
+    "val_features.npy": "43550a7702e8c881f037d240c3bef9adaa8710a921032f4299009b030d618542",
+    "val_labels.npy": "1e7d667601852b93172b9806aa25aa6d38693ef31214369d665fd6f9e15ed879"
+  },
+  "source_manifest": {
+    "features_manifest": {
+      "backbone_unchanged": true,
+      "backbone_weights_after": "2e9c0fcbecf173dd143e5579d3051ddda0804fa4844163e88803138ecfc86de0",
+      "backbone_weights_before": "2e9c0fcbecf173dd143e5579d3051ddda0804fa4844163e88803138ecfc86de0",
+      "class_names": [
+        "aquatic_mammals",
+        "fish",
+        "flowers",
+        "food_containers",
+        "fruit_and_vegetables",
+        "household_electrical_devices",
+        "household_furniture",
+        "insects",
+        "large_carnivores",
+        "large_man-made_outdoor_things",
+        "large_natural_outdoor_scenes",
+        "large_omnivores_and_herbivores",
+        "medium_mammals",
+        "non-insect_invertebrates",
+        "people",
+        "reptiles",
+        "small_mammals",
+        "trees",
+        "vehicles_1",
+        "vehicles_2"
+      ],
+      "created_at": "2026-09-29T21:03:01.811+00:00",
+      "dataset": "cifar100_coarse",
+      "dense20_run": "outputs/classic-dense20/cifar100_coarse/runs/cifar100_coarse__dense20_fp32_aug05__seed-42",
+      "elapsed_seconds": 13.828548080000473,
+      "encoder128": "outputs/classic-dense20/cifar100_coarse/runs/cifar100_coarse__dense20_fp32_aug05__seed-42/artifacts/encoder128.keras",
+      "encoder128_sha256": "1ef55589f6db5adfb5dd5e65745dc07f99c3d44df71165d3e18db6ceda92d023",
+      "feature_semantics": "Saída de block5_pool após GlobalAveragePooling2D; nenhuma camada densa incluída.",
+      "feature_width": 128,
+      "model_profile": {
+        "feature_shape": [
+          null,
+          1,
+          1,
+          128
+        ],
+        "input_shape": [
+          null,
+          64,
+          64,
+          3
+        ]
+      },
+      "schema_version": 1,
+      "settings": {
+        "augmentation": false,
+        "batch_size": 128,
+        "deterministic": true,
+        "feature_definition": [
+          "block5_pool",
+          "GlobalAveragePooling2D"
+        ],
+        "feature_width": 128,
+        "normalization": "unit_interval",
+        "output_dtype": "float32",
+        "seed": 42,
+        "shuffle": false,
+        "telemetry_interval_seconds": 1.0,
+        "training": false
+      },
+      "source_checkpoint": "models/controlled-augmentation05-batch-activation/quantization/cifar100_coarse/fp32/cifar100_coarse/runs/cifar100_coarse__unit_interval__all_raw__seed-42/checkpoints/best.keras",
+      "source_checkpoint_sha256": "324147cfc5739bc520eaa090b368dfc19e44d45b94cb73bbeddfbe582350a166",
+      "split_fingerprint": "c5f33c74d1bd3def59246c517a567c911f730b09064cf4fc52cbbb4497c5afa0",
+      "splits": {
+        "test": {
+          "examples": 9000,
+          "features": "outputs/classic-dense20/cifar100_coarse/runs/cifar100_coarse__dense20_fp32_aug05__seed-42/artifacts/features128/test_features.npy",
+          "features_dtype": "float32",
+          "features_sha256": "cf6c453f0e82040bb471510e891e2e601f29a9b69abb1e38bfd4d55bb9cef11e",
+          "features_shape": [
+            9000,
+            128
+          ],
+          "indices_sha256": "34eb690a78d9bdd3ca50ea456d1109602f8ce872f9825c251b84ff7e55ea877a",
+          "labels": "outputs/classic-dense20/cifar100_coarse/runs/cifar100_coarse__dense20_fp32_aug05__seed-42/artifacts/features128/test_labels.npy",
+          "labels_dtype": "int64",
+          "labels_sha256": "ccd0062082f185aa8ed1620c99738e2f22c42a135ed89bf5dbabef8e4793557d",
+          "labels_shape": [
+            9000
+          ]
+        },
+        "train": {
+          "examples": 42000,
+          "features": "outputs/classic-dense20/cifar100_coarse/runs/cifar100_coarse__dense20_fp32_aug05__seed-42/artifacts/features128/train_features.npy",
+          "features_dtype": "float32",
+          "features_sha256": "41a7973004371f97257cbba766f4202ffc934bd92e6e5883bfe9123faf56c289",
+          "features_shape": [
+            42000,
+            128
+          ],
+          "indices_sha256": "85357ba2a2b07c9ac994806179f30e593a77ac043b7a0bf5d248d356d21b24c3",
+          "labels": "outputs/classic-dense20/cifar100_coarse/runs/cifar100_coarse__dense20_fp32_aug05__seed-42/artifacts/features128/train_labels.npy",
+          "labels_dtype": "int64",
+          "labels_sha256": "c98a479f7dd88070fa9dc5cb4f413944d711ebb6450367505b59a734334502d5",
+          "labels_shape": [
+            42000
+          ]
+        },
+        "val": {
+          "examples": 9000,
+          "features": "outputs/classic-dense20/cifar100_coarse/runs/cifar100_coarse__dense20_fp32_aug05__seed-42/artifacts/features128/val_features.npy",
+          "features_dtype": "float32",
+          "features_sha256": "43550a7702e8c881f037d240c3bef9adaa8710a921032f4299009b030d618542",
+          "features_shape": [
+            9000,
+            128
+          ],
+          "indices_sha256": "9947a5d88b0f94093c64ccca25c972ea48cd86ca88ec01ddc961ab8a36b1f9ac",
+          "labels": "outputs/classic-dense20/cifar100_coarse/runs/cifar100_coarse__dense20_fp32_aug05__seed-42/artifacts/features128/val_labels.npy",
+          "labels_dtype": "int64",
+          "labels_sha256": "1e7d667601852b93172b9806aa25aa6d38693ef31214369d665fd6f9e15ed879",
+          "labels_shape": [
+            9000
+          ]
+        }
+      },
+      "status": "completed",
+      "telemetry": {
+        "hardware": "outputs/classic-dense20/cifar100_coarse/runs/cifar100_coarse__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210248Z/hardware.json",
+        "sample_count": 22,
+        "samples": "outputs/classic-dense20/cifar100_coarse/runs/cifar100_coarse__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210248Z/samples.jsonl",
+        "summary": "outputs/classic-dense20/cifar100_coarse/runs/cifar100_coarse__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210248Z/summary.json"
+      }
+    },
+    "features_manifest_path": "<local-path-redacted>",
+    "source_run_id": null,
+    "source_run_manifest": null
+  },
+  "statistics": {
+    "test": {
+      "dtype": "float32",
+      "examples": 9000,
+      "inf_count": 0,
+      "label_dtype": "int64",
+      "label_max": 19,
+      "label_min": 0,
+      "max": 2.5682373046875,
+      "mean": -0.02117762470702998,
+      "min": -0.27827128767967224,
+      "nan_count": 0,
+      "shape": [
+        9000,
+        128
+      ],
+      "std": 0.133537400450439
+    },
+    "train": {
+      "dtype": "float32",
+      "examples": 42000,
+      "inf_count": 0,
+      "label_dtype": "int64",
+      "label_max": 19,
+      "label_min": 0,
+      "max": 2.675137996673584,
+      "mean": -0.020409482273738892,
+      "min": -0.2784311771392822,
+      "nan_count": 0,
+      "shape": [
+        42000,
+        128
+      ],
+      "std": 0.1350698422872572
+    },
+    "val": {
+      "dtype": "float32",
+      "examples": 9000,
+      "inf_count": 0,
+      "label_dtype": "int64",
+      "label_max": 19,
+      "label_min": 0,
+      "max": 2.354269504547119,
+      "mean": -0.02074433816795413,
+      "min": -0.2782212495803833,
+      "nan_count": 0,
+      "shape": [
+        9000,
+        128
+      ],
+      "std": 0.13365809163911446
+    }
+  }
+}

@@ -2,6 +2,10 @@
 
 Resultados da campanha `quantum_128_relu_20_parallel_pqc_features128`, seed 42, sobre os nove datasets locais. Corte de evidência: **05/10/2026 às 11h52 BRT**, término da última run. Apuração e figuras geradas em 05/10/2026. Originais preservados em `outputs/quantum-parallel-128-20/runs/<dataset>/pennylane/seed-42/`.
 
+## Arquivos de execução
+
+Os resultados por modelo e a coleta integral de diagnósticos/telemetria estão em [training-artifacts/quantum-parallel-128-20](../../training-artifacts/quantum-parallel-128-20/README.md).
+
 ## Resumo executivo
 
 - **9/9 treinamentos, 900/900 épocas**, 445,231 vetores de treino e **95,389 exemplos de teste**. Macro-F1 vai de **47,12% em CIFAR-100 coarse a 99,59% em GTSRB**. Os resultados são do checkpoint escolhido por validação.

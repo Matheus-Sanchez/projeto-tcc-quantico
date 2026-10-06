@@ -1,0 +1,224 @@
+{
+  "hashes": {
+    "test_features.npy": "0161379a68e0e66458ca8067b69e9777debfd6269ea479ef486befaf7ab11982",
+    "test_labels.npy": "9e16e9db4a41c9a130570b0d01c5ee30a29e2fe438372ff76d5e00d2d78ce2b0",
+    "train_features.npy": "4aeed5aeb4b9ad77bfa3ed0ce9ab5b7a41f38fd83b340114ff7524411eb57c0d",
+    "train_labels.npy": "a8791694da8df357f1597b76d3c2ec27837a534ab1a94fd741a33a7caf2396fa",
+    "val_features.npy": "8a9168b04d64f0a51064fd8ad3e5aaafcd02b21470d64aebc38bad51085b7d39",
+    "val_labels.npy": "17df2bcf54180cf15b4996748aaa6f59c283776a7847e681ba35753678fc8ec0"
+  },
+  "source_manifest": {
+    "features_manifest": {
+      "backbone_unchanged": true,
+      "backbone_weights_after": "5d4aea9582c8b5050b46012e1ef2302fafa9491d9fa8dd76b44d2c735e77388a",
+      "backbone_weights_before": "5d4aea9582c8b5050b46012e1ef2302fafa9491d9fa8dd76b44d2c735e77388a",
+      "class_names": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "31",
+        "32",
+        "33",
+        "34",
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45",
+        "46"
+      ],
+      "created_at": "2026-09-29T21:02:31.791+00:00",
+      "dataset": "emnist_balanced",
+      "dense20_run": "outputs/classic-dense20/emnist_balanced/runs/emnist_balanced__dense20_fp32_aug05__seed-42",
+      "elapsed_seconds": 27.867394344000786,
+      "encoder128": "outputs/classic-dense20/emnist_balanced/runs/emnist_balanced__dense20_fp32_aug05__seed-42/artifacts/encoder128.keras",
+      "encoder128_sha256": "c6d7c32d31611bae0775a87316f46379cb3e5ac251356c1c915899e57c4942a8",
+      "feature_semantics": "Saída de block5_pool após GlobalAveragePooling2D; nenhuma camada densa incluída.",
+      "feature_width": 128,
+      "model_profile": {
+        "feature_shape": [
+          null,
+          1,
+          1,
+          128
+        ],
+        "input_shape": [
+          null,
+          64,
+          64,
+          1
+        ]
+      },
+      "schema_version": 1,
+      "settings": {
+        "augmentation": false,
+        "batch_size": 128,
+        "deterministic": true,
+        "feature_definition": [
+          "block5_pool",
+          "GlobalAveragePooling2D"
+        ],
+        "feature_width": 128,
+        "normalization": "unit_interval",
+        "output_dtype": "float32",
+        "seed": 42,
+        "shuffle": false,
+        "telemetry_interval_seconds": 1.0,
+        "training": false
+      },
+      "source_checkpoint": "models/controlled-augmentation05-batch-activation/quantization/emnist_balanced/fp32/emnist_balanced/runs/emnist_balanced__unit_interval__all_raw__seed-42/checkpoints/best.keras",
+      "source_checkpoint_sha256": "7f093da41cab4b6e9c8d72f1bc6fddb15fbba748ed8e05aaa78dc465346ce9fc",
+      "split_fingerprint": "6e3059c51b533357fd06e5facb7f29c5be025840ab41ba1fe1d4e1431119bdd3",
+      "splits": {
+        "test": {
+          "examples": 19740,
+          "features": "outputs/classic-dense20/emnist_balanced/runs/emnist_balanced__dense20_fp32_aug05__seed-42/artifacts/features128/test_features.npy",
+          "features_dtype": "float32",
+          "features_sha256": "0161379a68e0e66458ca8067b69e9777debfd6269ea479ef486befaf7ab11982",
+          "features_shape": [
+            19740,
+            128
+          ],
+          "indices_sha256": "e19d3baca3419763f2d0fae75169a9173b9c9da29ddd9263abc7d8fa24fd2a29",
+          "labels": "outputs/classic-dense20/emnist_balanced/runs/emnist_balanced__dense20_fp32_aug05__seed-42/artifacts/features128/test_labels.npy",
+          "labels_dtype": "int64",
+          "labels_sha256": "9e16e9db4a41c9a130570b0d01c5ee30a29e2fe438372ff76d5e00d2d78ce2b0",
+          "labels_shape": [
+            19740
+          ]
+        },
+        "train": {
+          "examples": 92120,
+          "features": "outputs/classic-dense20/emnist_balanced/runs/emnist_balanced__dense20_fp32_aug05__seed-42/artifacts/features128/train_features.npy",
+          "features_dtype": "float32",
+          "features_sha256": "4aeed5aeb4b9ad77bfa3ed0ce9ab5b7a41f38fd83b340114ff7524411eb57c0d",
+          "features_shape": [
+            92120,
+            128
+          ],
+          "indices_sha256": "57052c1bd4f41e4396960582afb144f23693c800d059dd3e86dca3b1f0d81e00",
+          "labels": "outputs/classic-dense20/emnist_balanced/runs/emnist_balanced__dense20_fp32_aug05__seed-42/artifacts/features128/train_labels.npy",
+          "labels_dtype": "int64",
+          "labels_sha256": "a8791694da8df357f1597b76d3c2ec27837a534ab1a94fd741a33a7caf2396fa",
+          "labels_shape": [
+            92120
+          ]
+        },
+        "val": {
+          "examples": 19740,
+          "features": "outputs/classic-dense20/emnist_balanced/runs/emnist_balanced__dense20_fp32_aug05__seed-42/artifacts/features128/val_features.npy",
+          "features_dtype": "float32",
+          "features_sha256": "8a9168b04d64f0a51064fd8ad3e5aaafcd02b21470d64aebc38bad51085b7d39",
+          "features_shape": [
+            19740,
+            128
+          ],
+          "indices_sha256": "d120a27c24b37fb568c5c482151c83f8be817f573bf5d54f6e8ec39092525401",
+          "labels": "outputs/classic-dense20/emnist_balanced/runs/emnist_balanced__dense20_fp32_aug05__seed-42/artifacts/features128/val_labels.npy",
+          "labels_dtype": "int64",
+          "labels_sha256": "17df2bcf54180cf15b4996748aaa6f59c283776a7847e681ba35753678fc8ec0",
+          "labels_shape": [
+            19740
+          ]
+        }
+      },
+      "status": "completed",
+      "telemetry": {
+        "hardware": "outputs/classic-dense20/emnist_balanced/runs/emnist_balanced__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210203Z/hardware.json",
+        "sample_count": 36,
+        "samples": "outputs/classic-dense20/emnist_balanced/runs/emnist_balanced__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210203Z/samples.jsonl",
+        "summary": "outputs/classic-dense20/emnist_balanced/runs/emnist_balanced__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210203Z/summary.json"
+      }
+    },
+    "features_manifest_path": "<local-path-redacted>",
+    "source_run_id": null,
+    "source_run_manifest": null
+  },
+  "statistics": {
+    "test": {
+      "dtype": "float32",
+      "examples": 19740,
+      "inf_count": 0,
+      "label_dtype": "int64",
+      "label_max": 46,
+      "label_min": 0,
+      "max": 2.2411298751831055,
+      "mean": -0.012646241319046955,
+      "min": -0.2783878743648529,
+      "nan_count": 0,
+      "shape": [
+        19740,
+        128
+      ],
+      "std": 0.1720522331342201
+    },
+    "train": {
+      "dtype": "float32",
+      "examples": 92120,
+      "inf_count": 0,
+      "label_dtype": "int64",
+      "label_max": 46,
+      "label_min": 0,
+      "max": 2.3936431407928467,
+      "mean": -0.01244223995032014,
+      "min": -0.27843335270881653,
+      "nan_count": 0,
+      "shape": [
+        92120,
+        128
+      ],
+      "std": 0.1722768369433571
+    },
+    "val": {
+      "dtype": "float32",
+      "examples": 19740,
+      "inf_count": 0,
+      "label_dtype": "int64",
+      "label_max": 46,
+      "label_min": 0,
+      "max": 2.537163734436035,
+      "mean": -0.01255892094712947,
+      "min": -0.2784022092819214,
+      "nan_count": 0,
+      "shape": [
+        19740,
+        128
+      ],
+      "std": 0.1722374335800091
+    }
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "hashes": {
+    "test_features.npy": "d6a60146fb7d6a15a3672fe8df9f6097aa1ae667b2a24628ac2948e590d96730",
+    "test_labels.npy": "2ed3381e3b45c6ce3664d6842cdd1f8a93bfb49aed2dfbb0968111e85c6d6ee9",
+    "train_features.npy": "0dc233e6b684483ede4f4311b15035fa7eb3fd6cf06b34503706f890c9ebe4da",
+    "train_labels.npy": "900e03ed1caf862a1b0003f51fd2ccd0f129ce67ecfd33af8cf73db530e2435b",
+    "val_features.npy": "0e3f85d54e6e2bd012a33fad9b266e12aa90258cd02948782b55dc8325d4001b",
+    "val_labels.npy": "c0dfdd4f9721843d769dd3794f89df97b0285add3258057dfacb1cfea315b6d1"
+  },
+  "source_manifest": {
+    "features_manifest": {
+      "backbone_unchanged": true,
+      "backbone_weights_after": "32419c4a27711723e4b2504ddc00a82faf210a25e7c9a706c50483b649760dcd",
+      "backbone_weights_before": "32419c4a27711723e4b2504ddc00a82faf210a25e7c9a706c50483b649760dcd",
+      "class_names": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "created_at": "2026-09-29T21:03:29.729+00:00",
+      "dataset": "svhn",
+      "dense20_run": "outputs/classic-dense20/svhn/runs/svhn__dense20_fp32_aug05__seed-42",
+      "elapsed_seconds": 24.613170212000114,
+      "encoder128": "outputs/classic-dense20/svhn/runs/svhn__dense20_fp32_aug05__seed-42/artifacts/encoder128.keras",
+      "encoder128_sha256": "cf0f4c7fd092a189a23df6100ab4d993124ba1fad74f313011a166057586a4fc",
+      "feature_semantics": "Saída de block5_pool após GlobalAveragePooling2D; nenhuma camada densa incluída.",
+      "feature_width": 128,
+      "model_profile": {
+        "feature_shape": [
+          null,
+          1,
+          1,
+          128
+        ],
+        "input_shape": [
+          null,
+          64,
+          64,
+          3
+        ]
+      },
+      "schema_version": 1,
+      "settings": {
+        "augmentation": false,
+        "batch_size": 128,
+        "deterministic": true,
+        "feature_definition": [
+          "block5_pool",
+          "GlobalAveragePooling2D"
+        ],
+        "feature_width": 128,
+        "normalization": "unit_interval",
+        "output_dtype": "float32",
+        "seed": 42,
+        "shuffle": false,
+        "telemetry_interval_seconds": 1.0,
+        "training": false
+      },
+      "source_checkpoint": "models/controlled-augmentation05-batch-activation/quantization/svhn/fp32/svhn/runs/svhn__unit_interval__all_raw__seed-42/checkpoints/best.keras",
+      "source_checkpoint_sha256": "8f9804e18671e42819f912d029ff8abe1a69c9245b3681b4988771f304a3f754",
+      "split_fingerprint": "b1ad6aa772e6195196890106f84cdbed3cf158b3eae278cd230309d2f82758c9",
+      "splits": {
+        "test": {
+          "examples": 14893,
+          "features": "outputs/classic-dense20/svhn/runs/svhn__dense20_fp32_aug05__seed-42/artifacts/features128/test_features.npy",
+          "features_dtype": "float32",
+          "features_sha256": "d6a60146fb7d6a15a3672fe8df9f6097aa1ae667b2a24628ac2948e590d96730",
+          "features_shape": [
+            14893,
+            128
+          ],
+          "indices_sha256": "2f7c98df29a16deaf80e511eed16248f0bfbe4a195b4b0bb57025771f63b6688",
+          "labels": "outputs/classic-dense20/svhn/runs/svhn__dense20_fp32_aug05__seed-42/artifacts/features128/test_labels.npy",
+          "labels_dtype": "int64",
+          "labels_sha256": "2ed3381e3b45c6ce3664d6842cdd1f8a93bfb49aed2dfbb0968111e85c6d6ee9",
+          "labels_shape": [
+            14893
+          ]
+        },
+        "train": {
+          "examples": 69502,
+          "features": "outputs/classic-dense20/svhn/runs/svhn__dense20_fp32_aug05__seed-42/artifacts/features128/train_features.npy",
+          "features_dtype": "float32",
+          "features_sha256": "0dc233e6b684483ede4f4311b15035fa7eb3fd6cf06b34503706f890c9ebe4da",
+          "features_shape": [
+            69502,
+            128
+          ],
+          "indices_sha256": "5fcc22e48d77df853cc327ca1f954fa781368708fd8a7c61cea100a5a31791fa",
+          "labels": "outputs/classic-dense20/svhn/runs/svhn__dense20_fp32_aug05__seed-42/artifacts/features128/train_labels.npy",
+          "labels_dtype": "int64",
+          "labels_sha256": "900e03ed1caf862a1b0003f51fd2ccd0f129ce67ecfd33af8cf73db530e2435b",
+          "labels_shape": [
+            69502
+          ]
+        },
+        "val": {
+          "examples": 14894,
+          "features": "outputs/classic-dense20/svhn/runs/svhn__dense20_fp32_aug05__seed-42/artifacts/features128/val_features.npy",
+          "features_dtype": "float32",
+          "features_sha256": "0e3f85d54e6e2bd012a33fad9b266e12aa90258cd02948782b55dc8325d4001b",
+          "features_shape": [
+            14894,
+            128
+          ],
+          "indices_sha256": "1977422303eabf5ac6f0fdf8e0b2428f7ce4224b0c15e46d68eb8ab284338bc9",
+          "labels": "outputs/classic-dense20/svhn/runs/svhn__dense20_fp32_aug05__seed-42/artifacts/features128/val_labels.npy",
+          "labels_dtype": "int64",
+          "labels_sha256": "c0dfdd4f9721843d769dd3794f89df97b0285add3258057dfacb1cfea315b6d1",
+          "labels_shape": [
+            14894
+          ]
+        }
+      },
+      "status": "completed",
+      "telemetry": {
+        "hardware": "outputs/classic-dense20/svhn/runs/svhn__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210305Z/hardware.json",
+        "sample_count": 32,
+        "samples": "outputs/classic-dense20/svhn/runs/svhn__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210305Z/samples.jsonl",
+        "summary": "outputs/classic-dense20/svhn/runs/svhn__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210305Z/summary.json"
+      }
+    },
+    "features_manifest_path": "<local-path-redacted>",
+    "source_run_id": null,
+    "source_run_manifest": null
+  },
+  "statistics": {
+    "test": {
+      "dtype": "float32",
+      "examples": 14893,
+      "inf_count": 0,
+      "label_dtype": "int64",
+      "label_max": 9,
+      "label_min": 0,
+      "max": 2.732088327407837,
+      "mean": 0.012859701272609348,
+      "min": -0.27776482701301575,
+      "nan_count": 0,
+      "shape": [
+        14893,
+        128
+      ],
+      "std": 0.17441031396540402
+    },
+    "train": {
+      "dtype": "float32",
+      "examples": 69502,
+      "inf_count": 0,
+      "label_dtype": "int64",
+      "label_max": 9,
+      "label_min": 0,
+      "max": 2.777165412902832,
+      "mean": 0.013275055156788354,
+      "min": -0.27824831008911133,
+      "nan_count": 0,
+      "shape": [
+        69502,
+        128
+      ],
+      "std": 0.17491415030966678
+    },
+    "val": {
+      "dtype": "float32",
+      "examples": 14894,
+      "inf_count": 0,
+      "label_dtype": "int64",
+      "label_max": 9,
+      "label_min": 0,
+      "max": 3.157817840576172,
+      "mean": 0.012678634634350481,
+      "min": -0.2778463661670685,
+      "nan_count": 0,
+      "shape": [
+        14894,
+        128
+      ],
+      "std": 0.17409700683538068
+    }
+  }
+}
