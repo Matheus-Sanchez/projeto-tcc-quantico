@@ -19,6 +19,12 @@ Windows/Python 3.12 usado na verificação. Para reproduzi-lo, instale esse lock
 antes de instalar o pacote com python -m pip install --no-deps -e .
 O preflight exige as versões diretas e registra todas as transitivas.
 
+No macOS com um `.venv` antigo de TensorFlow/Metal, crie `.venv-quantum` com
+Python 3.12 e instale `requirements/quantum-local.txt` nele. O atalho
+`./scripts/run_hybrid_macos.sh` usa esse ambiente por padrão. Os simuladores
+quânticos rodam em CPU; a disponibilidade de GPU para as camadas TensorFlow
+depende do ambiente e deve ser confirmada na execução, sem presumir Metal.
+
 utils.experiment_config.VectorHeadSettings centraliza seed 42, batch 128,
 Adam, LR 0.0003, 100 épocas, FP32, seleção máxima por val_macro_f1, sem early
 stopping ou scheduler, telemetria a cada 5 segundos. O carregador único em

@@ -75,11 +75,22 @@ ambientes e métricas históricos sem misturá-los aos treinos da nova cabeça.
 
 ## Cabeça quântica local
 
+No macOS, use um ambiente separado dos experimentos antigos com TensorFlow
+2.18/Metal. Este checkout exige Python 3.12 e as versões fixadas em
+`requirements/quantum-local.txt`:
+
 ```bash
-python -m pip install -r requirements/quantum-local.txt
-python -m quantum_models.parallel_dense20 --all --backend both --dry-run
-python -m quantum_models.parallel_dense20 --all --backend both --smoke --resume
-python -m quantum_models.parallel_dense20 --all --backend both --resume
+uv venv --python 3.12 .venv-quantum
+uv pip install --python .venv-quantum/bin/python -r requirements/quantum-local.txt
+uv pip check --python .venv-quantum/bin/python
+./scripts/run_hybrid_macos.sh --all --backend both --dry-run
+# Testes da cabeça com os mesmos limites de threads usados pelo executor:
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+  TF_NUM_INTRAOP_THREADS=1 TF_NUM_INTEROP_THREADS=1 \
+  .venv-quantum/bin/python -m pytest -q
+# Depois da validação, execute o smoke antes da matriz completa:
+./scripts/run_hybrid_macos.sh --all --backend both --smoke --resume
+./scripts/run_hybrid_macos.sh --all --backend both --resume
 ```
 
 O treino completo executa 18 jobs, um por vez, na ordem dos nove datasets:
