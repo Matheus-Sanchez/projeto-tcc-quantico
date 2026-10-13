@@ -1,0 +1,38 @@
+{
+  "batch_size": 128,
+  "checkpoint_metric": "val_macro_f1",
+  "dataset": "fer2013",
+  "early_stopping": false,
+  "experiment": "classical_128_relu_20_tanh_features128",
+  "hidden_activation": "tanh",
+  "hidden_units": 20,
+  "input_features": 128,
+  "learning_rate": 0.0003,
+  "lr_scheduler": false,
+  "max_epochs": 100,
+  "num_classes": 7,
+  "optimizer": "adam",
+  "platform": "darwin",
+  "precision": "float32",
+  "projection_activation": "relu",
+  "projection_units": 128,
+  "seed": 42,
+  "source_feature_hashes": {
+    "test_features.npy": "8e88c44149d8d4b86721abf1b12f8abe596ee1f66930e80741e7c1e24a3bf46b",
+    "test_labels.npy": "b0c9002fcff7ec5c6620fdab66d93a04992a91f731d8cccea912e95f8ccac46c",
+    "train_features.npy": "d369b819ee08054d13307a56a479436b7ce967340b2763f4e620426ec6f5ee5c",
+    "train_labels.npy": "5376b3c171b8c3dd255fccaece825fad4846f8b929166050d8339f8d063b1635",
+    "val_features.npy": "abf7cfcf562389e8cdc6920f1b86f12fd2bb9f7df17f1c3fc3b866ddcf0abca6",
+    "val_labels.npy": "24ad7caa2478972f4d83f2a6e8f4b90a61cfe39191abd722ddc75f5ea6577a58"
+  },
+  "source_features": "<local-path-redacted>/outputs/classic-dense20/fer2013/runs/fer2013__dense20_fp32_aug05__seed-42/artifacts/features128",
+  "split_fingerprint": null,
+  "telemetry_interval_seconds": 5.0,
+  "transformations": {
+    "augmentation": false,
+    "feature_selection": false,
+    "normalization": false,
+    "pca": false,
+    "scaler": false
+  }
+}

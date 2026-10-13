@@ -1,0 +1,360 @@
+{
+  "completed_at": "2026-09-30T01:38:25.394+00:00",
+  "config_fingerprint": "3da0b8778a31e854a9b4a119caf380bce88310e03417cfbeaf9b67522ef47235",
+  "created_at": "2026-09-30T01:36:53.148+00:00",
+  "dataset": "kmnist",
+  "message": "Treino e avaliação final concluídos",
+  "selected_checkpoint": "<local-path-redacted>/outputs/classical-128-20-mac/kmnist/seed-42/best.keras",
+  "source": {
+    "features_manifest": {
+      "backbone_unchanged": true,
+      "backbone_weights_after": "d8c88b482659b75c8e5b61e41f0f9b195775a88b11588e360427449d1ab5df24",
+      "backbone_weights_before": "d8c88b482659b75c8e5b61e41f0f9b195775a88b11588e360427449d1ab5df24",
+      "class_names": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "created_at": "2026-09-29T21:02:02.036+00:00",
+      "dataset": "kmnist",
+      "dense20_run": "<local-path-redacted>/outputs/classic-dense20/kmnist/runs/kmnist__dense20_fp32_aug05__seed-42",
+      "elapsed_seconds": 15.405298857000162,
+      "encoder128": "<local-path-redacted>/outputs/classic-dense20/kmnist/runs/kmnist__dense20_fp32_aug05__seed-42/artifacts/encoder128.keras",
+      "encoder128_sha256": "88112702a4a88cf38be779370dec02db47ddf1baf8c0fdec816a0c7a5b529c87",
+      "feature_semantics": "Saída de block5_pool após GlobalAveragePooling2D; nenhuma camada densa incluída.",
+      "feature_width": 128,
+      "model_profile": {
+        "feature_shape": [
+          null,
+          1,
+          1,
+          128
+        ],
+        "input_shape": [
+          null,
+          64,
+          64,
+          1
+        ]
+      },
+      "schema_version": 1,
+      "settings": {
+        "augmentation": false,
+        "batch_size": 128,
+        "deterministic": true,
+        "feature_definition": [
+          "block5_pool",
+          "GlobalAveragePooling2D"
+        ],
+        "feature_width": 128,
+        "normalization": "unit_interval",
+        "output_dtype": "float32",
+        "seed": 42,
+        "shuffle": false,
+        "telemetry_interval_seconds": 1.0,
+        "training": false
+      },
+      "source_checkpoint": "<local-path-redacted>/models/controlled-augmentation05-batch-activation/quantization/kmnist/fp32/kmnist/runs/kmnist__unit_interval__all_raw__seed-42/checkpoints/best.keras",
+      "source_checkpoint_sha256": "5a28f84f62d0ef54028b8c7bef077db4256c0050a5b538d40c88fcbab57dbe8a",
+      "split_fingerprint": "161c642197f73a5c2a9888f8f889988f3853ec4a3aa1a4101c2c1fe0d3478f81",
+      "splits": {
+        "test": {
+          "examples": 10500,
+          "features": "<local-path-redacted>/outputs/classic-dense20/kmnist/runs/kmnist__dense20_fp32_aug05__seed-42/artifacts/features128/test_features.npy",
+          "features_dtype": "float32",
+          "features_sha256": "b5703058d7916e7e3a9275a36424a774f710315e5e1d0c7411b4dbe810e75372",
+          "features_shape": [
+            10500,
+            128
+          ],
+          "indices_sha256": "55c95939b2df5e089920ade9c4b62cb3deea34a7ca558e714102b57ecb6701d6",
+          "labels": "<local-path-redacted>/outputs/classic-dense20/kmnist/runs/kmnist__dense20_fp32_aug05__seed-42/artifacts/features128/test_labels.npy",
+          "labels_dtype": "int64",
+          "labels_sha256": "cfb18bb9e82cb0c8a46bbbe94d9a76e6ca65f86c5d3021d4fce2a1a74a855f35",
+          "labels_shape": [
+            10500
+          ]
+        },
+        "train": {
+          "examples": 49000,
+          "features": "<local-path-redacted>/outputs/classic-dense20/kmnist/runs/kmnist__dense20_fp32_aug05__seed-42/artifacts/features128/train_features.npy",
+          "features_dtype": "float32",
+          "features_sha256": "6a0d7380230ec8d45ed0f43dee19d1ac132436b10575a3a0304e86d568d6e190",
+          "features_shape": [
+            49000,
+            128
+          ],
+          "indices_sha256": "051d8c806a1bef8d497fc76cd87dc7184534ff9600a6d0b68effbddee246f2d5",
+          "labels": "<local-path-redacted>/outputs/classic-dense20/kmnist/runs/kmnist__dense20_fp32_aug05__seed-42/artifacts/features128/train_labels.npy",
+          "labels_dtype": "int64",
+          "labels_sha256": "5fb1d07f658e568a30bdb40b4589f89de85e9a38df8d1fd21d5fcb9e8a64153a",
+          "labels_shape": [
+            49000
+          ]
+        },
+        "val": {
+          "examples": 10500,
+          "features": "<local-path-redacted>/outputs/classic-dense20/kmnist/runs/kmnist__dense20_fp32_aug05__seed-42/artifacts/features128/val_features.npy",
+          "features_dtype": "float32",
+          "features_sha256": "7eccb3a832e9072be2eb913865613268842d70d401d8c824d71a113fdda92f06",
+          "features_shape": [
+            10500,
+            128
+          ],
+          "indices_sha256": "15302c18d42daea44f7332cbdad07a53920ae2cfb2e985b4c25d93b21151eb85",
+          "labels": "<local-path-redacted>/outputs/classic-dense20/kmnist/runs/kmnist__dense20_fp32_aug05__seed-42/artifacts/features128/val_labels.npy",
+          "labels_dtype": "int64",
+          "labels_sha256": "87c868483aac258e36f5b6c598c847191fa124f92a58964865a8283a73f8bb3e",
+          "labels_shape": [
+            10500
+          ]
+        }
+      },
+      "status": "completed",
+      "telemetry": {
+        "hardware": "<local-path-redacted>/outputs/classic-dense20/kmnist/runs/kmnist__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210146Z/hardware.json",
+        "sample_count": 24,
+        "samples": "<local-path-redacted>/outputs/classic-dense20/kmnist/runs/kmnist__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210146Z/samples.jsonl",
+        "summary": "<local-path-redacted>/outputs/classic-dense20/kmnist/runs/kmnist__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210146Z/summary.json"
+      }
+    },
+    "features_manifest_path": "<local-path-redacted>/outputs/classic-dense20/kmnist/runs/kmnist__dense20_fp32_aug05__seed-42/artifacts/features128/manifest.json",
+    "source_run_id": null,
+    "source_run_manifest": null
+  },
+  "status": "completed",
+  "telemetry": {
+    "hardware": "<local-path-redacted>/outputs/classical-128-20-mac/kmnist/seed-42/telemetry/hardware.json",
+    "sample_count": 13,
+    "samples": "<local-path-redacted>/outputs/classical-128-20-mac/kmnist/seed-42/telemetry/samples.jsonl",
+    "summary": "<local-path-redacted>/outputs/classical-128-20-mac/kmnist/seed-42/telemetry/summary.json"
+  },
+  "test_metrics": {
+    "classification": {
+      "accuracy": 0.9864761904761905,
+      "balanced_accuracy": 0.9864761904761904,
+      "confusion_matrix": [
+        [
+          1038,
+          1,
+          0,
+          0,
+          3,
+          1,
+          3,
+          2,
+          1,
+          1
+        ],
+        [
+          0,
+          1030,
+          1,
+          0,
+          2,
+          1,
+          8,
+          2,
+          4,
+          2
+        ],
+        [
+          0,
+          3,
+          1031,
+          3,
+          3,
+          0,
+          5,
+          1,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          3,
+          1040,
+          1,
+          3,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          5,
+          3,
+          1,
+          0,
+          1036,
+          2,
+          2,
+          0,
+          1,
+          0
+        ],
+        [
+          2,
+          1,
+          1,
+          4,
+          0,
+          1037,
+          3,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          5,
+          6,
+          0,
+          2,
+          2,
+          1032,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          1,
+          1,
+          1041,
+          1,
+          1
+        ],
+        [
+          1,
+          3,
+          2,
+          2,
+          6,
+          0,
+          4,
+          1,
+          1031,
+          0
+        ],
+        [
+          1,
+          4,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1042
+        ]
+      ],
+      "macro_f1": 0.9864802850774016,
+      "macro_ovr_auc": 0.9991843789367598,
+      "macro_precision": 0.9864934728860071,
+      "macro_recall": 0.9864761904761904,
+      "per_class": {
+        "0": {
+          "f1": 0.9895138226882745,
+          "label": 0,
+          "precision": 0.9904580152671756,
+          "recall": 0.9885714285714285,
+          "support": 1050
+        },
+        "1": {
+          "f1": 0.9809523809523809,
+          "label": 1,
+          "precision": 0.9809523809523809,
+          "recall": 0.9809523809523809,
+          "support": 1050
+        },
+        "2": {
+          "f1": 0.9823725583611245,
+          "label": 2,
+          "precision": 0.982840800762631,
+          "recall": 0.981904761904762,
+          "support": 1050
+        },
+        "3": {
+          "f1": 0.9900047596382675,
+          "label": 3,
+          "precision": 0.9895337773549001,
+          "recall": 0.9904761904761905,
+          "support": 1050
+        },
+        "4": {
+          "f1": 0.9843230403800476,
+          "label": 4,
+          "precision": 0.9819905213270143,
+          "recall": 0.9866666666666667,
+          "support": 1050
+        },
+        "5": {
+          "f1": 0.9890319504053409,
+          "label": 5,
+          "precision": 0.9904489016236867,
+          "recall": 0.9876190476190476,
+          "support": 1050
+        },
+        "6": {
+          "f1": 0.9786628733997155,
+          "label": 6,
+          "precision": 0.9745042492917847,
+          "recall": 0.9828571428571429,
+          "support": 1050
+        },
+        "7": {
+          "f1": 0.9909566872917659,
+          "label": 7,
+          "precision": 0.9904852521408183,
+          "recall": 0.9914285714285714,
+          "support": 1050
+        },
+        "8": {
+          "f1": 0.9861310377809661,
+          "label": 8,
+          "precision": 0.9903938520653218,
+          "recall": 0.981904761904762,
+          "support": 1050
+        },
+        "9": {
+          "f1": 0.9928537398761315,
+          "label": 9,
+          "precision": 0.9933269780743565,
+          "recall": 0.9923809523809524,
+          "support": 1050
+        }
+      }
+    },
+    "keras_metrics": {
+      "accuracy": 0.9864761829376221,
+      "loss": 0.08377030491828918
+    }
+  },
+  "timestamp": "2026-09-30T01:38:25.395+00:00",
+  "timing": {
+    "best_epoch": 30,
+    "best_val_macro_f1": 0.9880957680552976,
+    "epochs_completed": 100,
+    "evaluation_seconds": 0.1403414999999768,
+    "fit_seconds_current_attempt": 29.602650124999855,
+    "mean_epoch_seconds": 0.2129626921900308,
+    "mean_train_examples_per_second": 233231.36977600842,
+    "total_epoch_seconds": 21.29626921900308,
+    "wall_seconds_current_attempt": 29.866447124999922
+  },
+  "trainable_parameters": 19302
+}

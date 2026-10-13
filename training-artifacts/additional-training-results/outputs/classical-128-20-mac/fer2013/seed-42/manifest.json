@@ -1,0 +1,279 @@
+{
+  "completed_at": "2026-09-30T01:41:39.353+00:00",
+  "config_fingerprint": "d3c2835c976b351192d75499e4551208b403de1eba2eb6690573e35e26b6c633",
+  "created_at": "2026-09-30T01:36:53.851+00:00",
+  "dataset": "fer2013",
+  "message": "Treino e avaliação final concluídos",
+  "selected_checkpoint": "<local-path-redacted>/outputs/classical-128-20-mac/fer2013/seed-42/best.keras",
+  "source": {
+    "features_manifest": {
+      "backbone_unchanged": true,
+      "backbone_weights_after": "a6dae15f661fc1bb80db47585362af38c850a0703d4ccf7add9b1e673670bead",
+      "backbone_weights_before": "a6dae15f661fc1bb80db47585362af38c850a0703d4ccf7add9b1e673670bead",
+      "class_names": [
+        "angry",
+        "disgust",
+        "fear",
+        "happy",
+        "sad",
+        "surprise",
+        "neutral"
+      ],
+      "created_at": "2026-09-29T21:04:29.170+00:00",
+      "dataset": "fer2013",
+      "dense20_run": "<local-path-redacted>/outputs/classic-dense20/fer2013/runs/fer2013__dense20_fp32_aug05__seed-42",
+      "elapsed_seconds": 9.260136083998077,
+      "encoder128": "<local-path-redacted>/outputs/classic-dense20/fer2013/runs/fer2013__dense20_fp32_aug05__seed-42/artifacts/encoder128.keras",
+      "encoder128_sha256": "a2d32c2d457e4bfe4a2929eae85f656c11ddd01f7f5715f68a6e7e442016ec93",
+      "feature_semantics": "Saída de block5_pool após GlobalAveragePooling2D; nenhuma camada densa incluída.",
+      "feature_width": 128,
+      "model_profile": {
+        "feature_shape": [
+          null,
+          1,
+          1,
+          128
+        ],
+        "input_shape": [
+          null,
+          64,
+          64,
+          1
+        ]
+      },
+      "schema_version": 1,
+      "settings": {
+        "augmentation": false,
+        "batch_size": 128,
+        "deterministic": true,
+        "feature_definition": [
+          "block5_pool",
+          "GlobalAveragePooling2D"
+        ],
+        "feature_width": 128,
+        "normalization": "unit_interval",
+        "output_dtype": "float32",
+        "seed": 42,
+        "shuffle": false,
+        "telemetry_interval_seconds": 1.0,
+        "training": false
+      },
+      "source_checkpoint": "<local-path-redacted>/models/controlled-augmentation05-batch-activation/quantization/fer2013/fp32/fer2013/runs/fer2013__unit_interval__all_raw__seed-42/checkpoints/best.keras",
+      "source_checkpoint_sha256": "fcb315f6c61e6b42fc1dbc79716b37a9e57cd2c1057d162cf974e954cacceba3",
+      "split_fingerprint": "5541ce65ae3322903e7ee5642b7d830f02d55620d3c4c6100b2b4f3869360b7d",
+      "splits": {
+        "test": {
+          "examples": 5382,
+          "features": "<local-path-redacted>/outputs/classic-dense20/fer2013/runs/fer2013__dense20_fp32_aug05__seed-42/artifacts/features128/test_features.npy",
+          "features_dtype": "float32",
+          "features_sha256": "8e88c44149d8d4b86721abf1b12f8abe596ee1f66930e80741e7c1e24a3bf46b",
+          "features_shape": [
+            5382,
+            128
+          ],
+          "indices_sha256": "9667489a6a3e325159cd43175c5ab84e4d5adca219b8c20d0d2ba28d31a261bf",
+          "labels": "<local-path-redacted>/outputs/classic-dense20/fer2013/runs/fer2013__dense20_fp32_aug05__seed-42/artifacts/features128/test_labels.npy",
+          "labels_dtype": "int64",
+          "labels_sha256": "b0c9002fcff7ec5c6620fdab66d93a04992a91f731d8cccea912e95f8ccac46c",
+          "labels_shape": [
+            5382
+          ]
+        },
+        "train": {
+          "examples": 25121,
+          "features": "<local-path-redacted>/outputs/classic-dense20/fer2013/runs/fer2013__dense20_fp32_aug05__seed-42/artifacts/features128/train_features.npy",
+          "features_dtype": "float32",
+          "features_sha256": "d369b819ee08054d13307a56a479436b7ce967340b2763f4e620426ec6f5ee5c",
+          "features_shape": [
+            25121,
+            128
+          ],
+          "indices_sha256": "9e9ed1b0adb7226abb36e33c06fd9e5e1ca2ef24bf724bd81906b53fe8d43897",
+          "labels": "<local-path-redacted>/outputs/classic-dense20/fer2013/runs/fer2013__dense20_fp32_aug05__seed-42/artifacts/features128/train_labels.npy",
+          "labels_dtype": "int64",
+          "labels_sha256": "5376b3c171b8c3dd255fccaece825fad4846f8b929166050d8339f8d063b1635",
+          "labels_shape": [
+            25121
+          ]
+        },
+        "val": {
+          "examples": 5384,
+          "features": "<local-path-redacted>/outputs/classic-dense20/fer2013/runs/fer2013__dense20_fp32_aug05__seed-42/artifacts/features128/val_features.npy",
+          "features_dtype": "float32",
+          "features_sha256": "abf7cfcf562389e8cdc6920f1b86f12fd2bb9f7df17f1c3fc3b866ddcf0abca6",
+          "features_shape": [
+            5384,
+            128
+          ],
+          "indices_sha256": "8c260efddb242abadf422d9384dbb66b85577d7eab836f87399f1dca9b1c267f",
+          "labels": "<local-path-redacted>/outputs/classic-dense20/fer2013/runs/fer2013__dense20_fp32_aug05__seed-42/artifacts/features128/val_labels.npy",
+          "labels_dtype": "int64",
+          "labels_sha256": "24ad7caa2478972f4d83f2a6e8f4b90a61cfe39191abd722ddc75f5ea6577a58",
+          "labels_shape": [
+            5384
+          ]
+        }
+      },
+      "status": "completed",
+      "telemetry": {
+        "hardware": "<local-path-redacted>/outputs/classic-dense20/fer2013/runs/fer2013__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210419Z/hardware.json",
+        "sample_count": 18,
+        "samples": "<local-path-redacted>/outputs/classic-dense20/fer2013/runs/fer2013__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210419Z/samples.jsonl",
+        "summary": "<local-path-redacted>/outputs/classic-dense20/fer2013/runs/fer2013__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210419Z/summary.json"
+      }
+    },
+    "features_manifest_path": "<local-path-redacted>/outputs/classic-dense20/fer2013/runs/fer2013__dense20_fp32_aug05__seed-42/artifacts/features128/manifest.json",
+    "source_run_id": null,
+    "source_run_manifest": null
+  },
+  "status": "completed",
+  "telemetry": {
+    "hardware": "<local-path-redacted>/outputs/classical-128-20-mac/fer2013/seed-42/telemetry/hardware.json",
+    "sample_count": 11,
+    "samples": "<local-path-redacted>/outputs/classical-128-20-mac/fer2013/seed-42/telemetry/samples.jsonl",
+    "summary": "<local-path-redacted>/outputs/classical-128-20-mac/fer2013/seed-42/telemetry/summary.json"
+  },
+  "test_metrics": {
+    "classification": {
+      "accuracy": 0.5057599405425492,
+      "balanced_accuracy": 0.4664314897112275,
+      "confusion_matrix": [
+        [
+          277,
+          5,
+          108,
+          75,
+          141,
+          30,
+          107
+        ],
+        [
+          17,
+          26,
+          11,
+          2,
+          14,
+          6,
+          6
+        ],
+        [
+          97,
+          3,
+          253,
+          73,
+          174,
+          69,
+          99
+        ],
+        [
+          76,
+          2,
+          53,
+          978,
+          108,
+          27,
+          104
+        ],
+        [
+          101,
+          7,
+          154,
+          96,
+          356,
+          23,
+          174
+        ],
+        [
+          28,
+          0,
+          70,
+          41,
+          15,
+          397,
+          49
+        ],
+        [
+          96,
+          4,
+          103,
+          110,
+          161,
+          21,
+          435
+        ]
+      ],
+      "macro_f1": 0.47899094704119477,
+      "macro_ovr_auc": 0.8166562841227228,
+      "macro_precision": 0.5011478645520777,
+      "macro_recall": 0.4664314897112275,
+      "per_class": {
+        "0": {
+          "f1": 0.3860627177700348,
+          "label": 0,
+          "precision": 0.40028901734104044,
+          "recall": 0.3728129205921938,
+          "support": 743
+        },
+        "1": {
+          "f1": 0.40310077519379844,
+          "label": 1,
+          "precision": 0.5531914893617021,
+          "recall": 0.3170731707317073,
+          "support": 82
+        },
+        "2": {
+          "f1": 0.33289473684210524,
+          "label": 2,
+          "precision": 0.33643617021276595,
+          "recall": 0.3294270833333333,
+          "support": 768
+        },
+        "3": {
+          "f1": 0.7183253764230628,
+          "label": 3,
+          "precision": 0.7112727272727273,
+          "recall": 0.7255192878338279,
+          "support": 1348
+        },
+        "4": {
+          "f1": 0.37872340425531914,
+          "label": 4,
+          "precision": 0.3673890608875129,
+          "recall": 0.3907793633369923,
+          "support": 911
+        },
+        "5": {
+          "f1": 0.6768968456947997,
+          "label": 5,
+          "precision": 0.6928446771378709,
+          "recall": 0.6616666666666666,
+          "support": 600
+        },
+        "6": {
+          "f1": 0.45693277310924363,
+          "label": 6,
+          "precision": 0.446611909650924,
+          "recall": 0.46774193548387094,
+          "support": 930
+        }
+      }
+    },
+    "keras_metrics": {
+      "accuracy": 0.5057599544525146,
+      "loss": 1.9238040447235107
+    }
+  },
+  "timestamp": "2026-09-30T01:41:39.354+00:00",
+  "timing": {
+    "best_epoch": 10,
+    "best_val_macro_f1": 0.5002122543532065,
+    "epochs_completed": 100,
+    "evaluation_seconds": 0.0909953340001266,
+    "fit_seconds_current_attempt": 15.42180108399998,
+    "mean_epoch_seconds": 0.10839252835999559,
+    "mean_train_examples_per_second": 236600.321511354,
+    "total_epoch_seconds": 10.83925283599956,
+    "wall_seconds_current_attempt": 15.588944625000295
+  },
+  "trainable_parameters": 19239
+}

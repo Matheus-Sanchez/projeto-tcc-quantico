@@ -1,0 +1,38 @@
+{
+  "batch_size": 128,
+  "checkpoint_metric": "val_macro_f1",
+  "dataset": "gtsrb",
+  "early_stopping": false,
+  "experiment": "classical_128_relu_20_tanh_features128",
+  "hidden_activation": "tanh",
+  "hidden_units": 20,
+  "input_features": 128,
+  "learning_rate": 0.0003,
+  "lr_scheduler": false,
+  "max_epochs": 100,
+  "num_classes": 43,
+  "optimizer": "adam",
+  "platform": "darwin",
+  "precision": "float32",
+  "projection_activation": "relu",
+  "projection_units": 128,
+  "seed": 42,
+  "source_feature_hashes": {
+    "test_features.npy": "9d581022dcde56f21101324f38d32844bc038de9bb6408c58fe8209f7a350192",
+    "test_labels.npy": "11eeb9499e285526f307d8e4e5f2c85faf9f8bf2a8a8f1d6abbb76a1ba4137a7",
+    "train_features.npy": "190d3ed4dadacd43795a3d0f08e4d07ad69c96c049fc3f2c1b94ef71ec7ab966",
+    "train_labels.npy": "1eb86c7c60297aa0ea55f5c1e671b40aa7e431b802ddfc1869f926ead46892af",
+    "val_features.npy": "498bdf57df5b515ad7e117b6e22d894527cbf5a2730259424c3ba44362f4df62",
+    "val_labels.npy": "05fa0f8a404fb4bd985ee0e04cf29b82d7174a6d27007b170a6db475d4f2163f"
+  },
+  "source_features": "<local-path-redacted>/outputs/classic-dense20/gtsrb/runs/gtsrb__dense20_fp32_aug05__seed-42/artifacts/features128",
+  "split_fingerprint": null,
+  "telemetry_interval_seconds": 5.0,
+  "transformations": {
+    "augmentation": false,
+    "feature_selection": false,
+    "normalization": false,
+    "pca": false,
+    "scaler": false
+  }
+}

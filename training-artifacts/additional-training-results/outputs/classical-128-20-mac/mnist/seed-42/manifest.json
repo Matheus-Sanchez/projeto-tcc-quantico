@@ -1,0 +1,360 @@
+{
+  "completed_at": "2026-09-30T01:37:26.337+00:00",
+  "config_fingerprint": "5143044f3dcc6ad8e1d18b942ff2ac216f5206f67d3d1062b885840b6cb3e332",
+  "created_at": "2026-09-30T01:36:52.932+00:00",
+  "dataset": "mnist",
+  "message": "Treino e avaliação final concluídos",
+  "selected_checkpoint": "<local-path-redacted>/outputs/classical-128-20-mac/mnist/seed-42/best.keras",
+  "source": {
+    "features_manifest": {
+      "backbone_unchanged": true,
+      "backbone_weights_after": "1726485e009b983e2ed8bc64245cde37e017980a5ab9cf5e513438c210e22c9b",
+      "backbone_weights_before": "1726485e009b983e2ed8bc64245cde37e017980a5ab9cf5e513438c210e22c9b",
+      "class_names": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "created_at": "2026-09-29T21:01:28.663+00:00",
+      "dataset": "mnist",
+      "dense20_run": "<local-path-redacted>/outputs/classic-dense20/mnist/runs/mnist__dense20_fp32_aug05__seed-42",
+      "elapsed_seconds": 16.513767414999165,
+      "encoder128": "<local-path-redacted>/outputs/classic-dense20/mnist/runs/mnist__dense20_fp32_aug05__seed-42/artifacts/encoder128.keras",
+      "encoder128_sha256": "ae336c23c9c5c269bdda915fb75c0f2c644c4f0997b614ee253c869219d92055",
+      "feature_semantics": "Saída de block5_pool após GlobalAveragePooling2D; nenhuma camada densa incluída.",
+      "feature_width": 128,
+      "model_profile": {
+        "feature_shape": [
+          null,
+          1,
+          1,
+          128
+        ],
+        "input_shape": [
+          null,
+          64,
+          64,
+          1
+        ]
+      },
+      "schema_version": 1,
+      "settings": {
+        "augmentation": false,
+        "batch_size": 128,
+        "deterministic": true,
+        "feature_definition": [
+          "block5_pool",
+          "GlobalAveragePooling2D"
+        ],
+        "feature_width": 128,
+        "normalization": "unit_interval",
+        "output_dtype": "float32",
+        "seed": 42,
+        "shuffle": false,
+        "telemetry_interval_seconds": 1.0,
+        "training": false
+      },
+      "source_checkpoint": "<local-path-redacted>/models/controlled-augmentation05-batch-activation/quantization/mnist/fp32/mnist/runs/mnist__unit_interval__all_raw__seed-42/checkpoints/best.keras",
+      "source_checkpoint_sha256": "7e45857db066d84be47b92377dfa17668682462f3e5177e5fa31c4269031e0db",
+      "split_fingerprint": "e318c7442df3e0a1d1f67bd6fa1eac1602b6440bf135240aca0008293af1e6c8",
+      "splits": {
+        "test": {
+          "examples": 10498,
+          "features": "<local-path-redacted>/outputs/classic-dense20/mnist/runs/mnist__dense20_fp32_aug05__seed-42/artifacts/features128/test_features.npy",
+          "features_dtype": "float32",
+          "features_sha256": "f64304ffbf428d819c18553c4c23a6eb38bdc01be0c6927537239fddba69c134",
+          "features_shape": [
+            10498,
+            128
+          ],
+          "indices_sha256": "2ae29f5f8fb09b5d1d40c0e1cd25eb7060599bab618103ae470be91a45b30860",
+          "labels": "<local-path-redacted>/outputs/classic-dense20/mnist/runs/mnist__dense20_fp32_aug05__seed-42/artifacts/features128/test_labels.npy",
+          "labels_dtype": "int64",
+          "labels_sha256": "6ed433750887ed40e18cb8b01d3d7acbacea9bdfcb65cbff69a6b3ea4fa11281",
+          "labels_shape": [
+            10498
+          ]
+        },
+        "train": {
+          "examples": 48999,
+          "features": "<local-path-redacted>/outputs/classic-dense20/mnist/runs/mnist__dense20_fp32_aug05__seed-42/artifacts/features128/train_features.npy",
+          "features_dtype": "float32",
+          "features_sha256": "9a003f102c07ab37fd4814aec85c97f6d1f771f0f71f309fcf3fa760acb72580",
+          "features_shape": [
+            48999,
+            128
+          ],
+          "indices_sha256": "df0d3a6803a6f9094aef456f76b12b2ae79bf770fe42e7ccdac79cbdaa6a3dcd",
+          "labels": "<local-path-redacted>/outputs/classic-dense20/mnist/runs/mnist__dense20_fp32_aug05__seed-42/artifacts/features128/train_labels.npy",
+          "labels_dtype": "int64",
+          "labels_sha256": "5f2222f8cf0f7af21654e23444eda09e665467901bb686ad890cc554a41d1696",
+          "labels_shape": [
+            48999
+          ]
+        },
+        "val": {
+          "examples": 10503,
+          "features": "<local-path-redacted>/outputs/classic-dense20/mnist/runs/mnist__dense20_fp32_aug05__seed-42/artifacts/features128/val_features.npy",
+          "features_dtype": "float32",
+          "features_sha256": "9ab9e2208af1fd4c52574c9be58c3ca85737842b96cd931702cd64c09ddae120",
+          "features_shape": [
+            10503,
+            128
+          ],
+          "indices_sha256": "87f61dccdc0616ee92dfbbc98f026933017276737aea5c3920b9b369f85e3639",
+          "labels": "<local-path-redacted>/outputs/classic-dense20/mnist/runs/mnist__dense20_fp32_aug05__seed-42/artifacts/features128/val_labels.npy",
+          "labels_dtype": "int64",
+          "labels_sha256": "b2cec11dbc0d63036a9d26a24799ee80528b6813eca1470642edc893aa542264",
+          "labels_shape": [
+            10503
+          ]
+        }
+      },
+      "status": "completed",
+      "telemetry": {
+        "hardware": "<local-path-redacted>/outputs/classic-dense20/mnist/runs/mnist__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210112Z/hardware.json",
+        "sample_count": 25,
+        "samples": "<local-path-redacted>/outputs/classic-dense20/mnist/runs/mnist__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210112Z/samples.jsonl",
+        "summary": "<local-path-redacted>/outputs/classic-dense20/mnist/runs/mnist__dense20_fp32_aug05__seed-42/artifacts/features128/telemetry/20260929T210112Z/summary.json"
+      }
+    },
+    "features_manifest_path": "<local-path-redacted>/outputs/classic-dense20/mnist/runs/mnist__dense20_fp32_aug05__seed-42/artifacts/features128/manifest.json",
+    "source_run_id": null,
+    "source_run_manifest": null
+  },
+  "status": "completed",
+  "telemetry": {
+    "hardware": "<local-path-redacted>/outputs/classical-128-20-mac/mnist/seed-42/telemetry/hardware.json",
+    "sample_count": 14,
+    "samples": "<local-path-redacted>/outputs/classical-128-20-mac/mnist/seed-42/telemetry/samples.jsonl",
+    "summary": "<local-path-redacted>/outputs/classical-128-20-mac/mnist/seed-42/telemetry/summary.json"
+  },
+  "test_metrics": {
+    "classification": {
+      "accuracy": 0.9922842446180224,
+      "balanced_accuracy": 0.9922038686783345,
+      "confusion_matrix": [
+        [
+          1029,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1174,
+          2,
+          0,
+          1,
+          0,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1039,
+          1,
+          0,
+          0,
+          2,
+          3,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1066,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          1017,
+          0,
+          0,
+          2,
+          0,
+          3
+        ],
+        [
+          0,
+          1,
+          1,
+          5,
+          0,
+          936,
+          2,
+          0,
+          2,
+          0
+        ],
+        [
+          1,
+          0,
+          4,
+          0,
+          1,
+          0,
+          1025,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          1,
+          0,
+          0,
+          1089,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          0,
+          1,
+          1,
+          2,
+          1013,
+          4
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          5,
+          2,
+          0,
+          4,
+          2,
+          1029
+        ]
+      ],
+      "macro_f1": 0.9922511532817919,
+      "macro_ovr_auc": 0.9997976994132414,
+      "macro_precision": 0.9923076244615064,
+      "macro_recall": 0.9922038686783345,
+      "per_class": {
+        "0": {
+          "f1": 0.9956458635703919,
+          "label": 0,
+          "precision": 0.997093023255814,
+          "recall": 0.9942028985507246,
+          "support": 1035
+        },
+        "1": {
+          "f1": 0.9944938585345193,
+          "label": 1,
+          "precision": 0.9949152542372881,
+          "recall": 0.9940728196443692,
+          "support": 1181
+        },
+        "2": {
+          "f1": 0.9909394372913687,
+          "label": 2,
+          "precision": 0.990467111534795,
+          "recall": 0.9914122137404581,
+          "support": 1048
+        },
+        "3": {
+          "f1": 0.9934762348555451,
+          "label": 3,
+          "precision": 0.9916279069767442,
+          "recall": 0.9953314659197012,
+          "support": 1071
+        },
+        "4": {
+          "f1": 0.9931640625,
+          "label": 4,
+          "precision": 0.9921951219512195,
+          "recall": 0.9941348973607038,
+          "support": 1023
+        },
+        "5": {
+          "f1": 0.9904761904761905,
+          "label": 5,
+          "precision": 0.9925768822905621,
+          "recall": 0.9883843717001056,
+          "support": 947
+        },
+        "6": {
+          "f1": 0.9946627850557982,
+          "label": 6,
+          "precision": 0.9951456310679612,
+          "recall": 0.9941804073714839,
+          "support": 1031
+        },
+        "7": {
+          "f1": 0.9904502046384721,
+          "label": 7,
+          "precision": 0.9855203619909503,
+          "recall": 0.9954296160877514,
+          "support": 1094
+        },
+        "8": {
+          "f1": 0.9916789035731768,
+          "label": 8,
+          "precision": 0.9941118743866536,
+          "recall": 0.9892578125,
+          "support": 1024
+        },
+        "9": {
+          "f1": 0.9875239923224568,
+          "label": 9,
+          "precision": 0.989423076923077,
+          "recall": 0.985632183908046,
+          "support": 1044
+        }
+      }
+    },
+    "keras_metrics": {
+      "accuracy": 0.9922842383384705,
+      "loss": 0.03592126816511154
+    }
+  },
+  "timestamp": "2026-09-30T01:37:26.338+00:00",
+  "timing": {
+    "best_epoch": 19,
+    "best_val_macro_f1": 0.9928063660502078,
+    "epochs_completed": 100,
+    "evaluation_seconds": 0.13880254199966657,
+    "fit_seconds_current_attempt": 32.11500279200027,
+    "mean_epoch_seconds": 0.22099362868999833,
+    "mean_train_examples_per_second": 225545.48025144756,
+    "total_epoch_seconds": 22.099362868999833,
+    "wall_seconds_current_attempt": 32.467811041999994
+  },
+  "trainable_parameters": 19302
+}

@@ -1,0 +1,38 @@
+{
+  "batch_size": 128,
+  "checkpoint_metric": "val_macro_f1",
+  "dataset": "kmnist",
+  "early_stopping": false,
+  "experiment": "classical_128_relu_20_tanh_features128",
+  "hidden_activation": "tanh",
+  "hidden_units": 20,
+  "input_features": 128,
+  "learning_rate": 0.0003,
+  "lr_scheduler": false,
+  "max_epochs": 100,
+  "num_classes": 10,
+  "optimizer": "adam",
+  "platform": "darwin",
+  "precision": "float32",
+  "projection_activation": "relu",
+  "projection_units": 128,
+  "seed": 42,
+  "source_feature_hashes": {
+    "test_features.npy": "b5703058d7916e7e3a9275a36424a774f710315e5e1d0c7411b4dbe810e75372",
+    "test_labels.npy": "cfb18bb9e82cb0c8a46bbbe94d9a76e6ca65f86c5d3021d4fce2a1a74a855f35",
+    "train_features.npy": "6a0d7380230ec8d45ed0f43dee19d1ac132436b10575a3a0304e86d568d6e190",
+    "train_labels.npy": "5fb1d07f658e568a30bdb40b4589f89de85e9a38df8d1fd21d5fcb9e8a64153a",
+    "val_features.npy": "7eccb3a832e9072be2eb913865613268842d70d401d8c824d71a113fdda92f06",
+    "val_labels.npy": "87c868483aac258e36f5b6c598c847191fa124f92a58964865a8283a73f8bb3e"
+  },
+  "source_features": "<local-path-redacted>/outputs/classic-dense20/kmnist/runs/kmnist__dense20_fp32_aug05__seed-42/artifacts/features128",
+  "split_fingerprint": null,
+  "telemetry_interval_seconds": 5.0,
+  "transformations": {
+    "augmentation": false,
+    "feature_selection": false,
+    "normalization": false,
+    "pca": false,
+    "scaler": false
+  }
+}

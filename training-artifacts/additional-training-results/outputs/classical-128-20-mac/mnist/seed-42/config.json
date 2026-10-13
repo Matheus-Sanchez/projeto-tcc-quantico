@@ -1,0 +1,38 @@
+{
+  "batch_size": 128,
+  "checkpoint_metric": "val_macro_f1",
+  "dataset": "mnist",
+  "early_stopping": false,
+  "experiment": "classical_128_relu_20_tanh_features128",
+  "hidden_activation": "tanh",
+  "hidden_units": 20,
+  "input_features": 128,
+  "learning_rate": 0.0003,
+  "lr_scheduler": false,
+  "max_epochs": 100,
+  "num_classes": 10,
+  "optimizer": "adam",
+  "platform": "darwin",
+  "precision": "float32",
+  "projection_activation": "relu",
+  "projection_units": 128,
+  "seed": 42,
+  "source_feature_hashes": {
+    "test_features.npy": "f64304ffbf428d819c18553c4c23a6eb38bdc01be0c6927537239fddba69c134",
+    "test_labels.npy": "6ed433750887ed40e18cb8b01d3d7acbacea9bdfcb65cbff69a6b3ea4fa11281",
+    "train_features.npy": "9a003f102c07ab37fd4814aec85c97f6d1f771f0f71f309fcf3fa760acb72580",
+    "train_labels.npy": "5f2222f8cf0f7af21654e23444eda09e665467901bb686ad890cc554a41d1696",
+    "val_features.npy": "9ab9e2208af1fd4c52574c9be58c3ca85737842b96cd931702cd64c09ddae120",
+    "val_labels.npy": "b2cec11dbc0d63036a9d26a24799ee80528b6813eca1470642edc893aa542264"
+  },
+  "source_features": "<local-path-redacted>/outputs/classic-dense20/mnist/runs/mnist__dense20_fp32_aug05__seed-42/artifacts/features128",
+  "split_fingerprint": null,
+  "telemetry_interval_seconds": 5.0,
+  "transformations": {
+    "augmentation": false,
+    "feature_selection": false,
+    "normalization": false,
+    "pca": false,
+    "scaler": false
+  }
+}
