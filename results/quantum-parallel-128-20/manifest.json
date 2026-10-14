@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-13T23:52:50.872770+00:00",
+  "source_commit": "a3fd6740512e04ef2ba69b96193a80b4c1bbcc91",
+  "source_root": "outputs/quantum-parallel-128-20",
+  "full_runs": [
+    {
+      "dataset": "svhn",
+      "backend": "pennylane",
+      "seed": 42,
+      "status": "completed",
+      "epochs": 100,
+      "selected_epoch": 9,
+      "selected_val_macro_f1": 0.9258521953870705,
+      "test_accuracy": 0.930101389914725,
+      "test_macro_f1": 0.9262870342115317,
+      "elapsed_seconds": 59064.395378,
+      "completed_at": "2026-10-09T13:28:23.607+00:00",
+      "trainable_parameters": 19482,
+      "noise_study_conditions": 64
+    },
+    {
+      "dataset": "svhn",
+      "backend": "qiskit",
+      "seed": 42,
+      "status": "completed",
+      "epochs": 100,
+      "selected_epoch": 9,
+      "selected_val_macro_f1": 0.9258521953870705,
+      "test_accuracy": 0.930101389914725,
+      "test_macro_f1": 0.9262870342115317,
+      "elapsed_seconds": 101535.3031662,
+      "completed_at": "2026-10-10T17:40:40.440+00:00",
+      "trainable_parameters": 19482,
+      "noise_study_conditions": 64
+    },
+    {
+      "dataset": "gtsrb",
+      "backend": "pennylane",
+      "seed": 42,
+      "status": "completed",
+      "epochs": 100,
+      "selected_epoch": 84,
+      "selected_val_macro_f1": 0.9974977813180294,
+      "test_accuracy": 0.9964261402314499,
+      "test_macro_f1": 0.9956857620021926,
+      "elapsed_seconds": 24257.1994482,
+      "completed_at": "2026-10-11T00:25:19.862+00:00",
+      "trainable_parameters": 20175,
+      "noise_study_conditions": 64
+    },
+    {
+      "dataset": "gtsrb",
+      "backend": "qiskit",
+      "seed": 42,
+      "status": "completed",
+      "epochs": 100,
+      "selected_epoch": 84,
+      "selected_val_macro_f1": 0.9974977813180294,
+      "test_accuracy": 0.9964261402314499,
+      "test_macro_f1": 0.9956857620021926,
+      "elapsed_seconds": 40174.931507400004,
+      "completed_at": "2026-10-11T11:34:55.969+00:00",
+      "trainable_parameters": 20175,
+      "noise_study_conditions": 64
+    },
+    {
+      "dataset": "fer2013",
+      "backend": "pennylane",
+      "seed": 42,
+      "status": "completed",
+      "epochs": 100,
+      "selected_epoch": 96,
+      "selected_val_macro_f1": 0.5027294943941402,
+      "test_accuracy": 0.5085470085470085,
+      "test_macro_f1": 0.48499617988592497,
+      "elapsed_seconds": 22239.7042948,
+      "completed_at": "2026-10-11T17:45:48.555+00:00",
+      "trainable_parameters": 19419,
+      "noise_study_conditions": 64
+    },
+    {
+      "dataset": "fer2013",
+      "backend": "qiskit",
+      "seed": 42,
+      "status": "completed",
+      "epochs": 100,
+      "selected_epoch": 96,
+      "selected_val_macro_f1": 0.5024907994382782,
+      "test_accuracy": 0.5079895949461167,
+      "test_macro_f1": 0.48457937556275604,
+      "elapsed_seconds": 35999.045059100026,
+      "completed_at": "2026-10-12T03:45:48.602+00:00",
+      "trainable_parameters": 19419,
+      "noise_study_conditions": 64
+    }
+  ],
+  "archives": [
+    {
+      "archive": "archives/svhn-pennylane-seed-42.tar.gz",
+      "source": "runs/svhn/pennylane/seed-42",
+      "source_files": 66439,
+      "source_bytes": 1906411608,
+      "archive_bytes": 1424356558,
+      "sha256": "aaa655234eecffa2297cff3312c5ccab87ca2b9982555fb1c9b98e74716e9627",
+      "inventory": "inventories/svhn-pennylane-seed-42.jsonl.gz",
+      "inventory_sha256": "87e5d2e380f0d97e6165329c9f8a4a51cca74b7b857ff0b39ac84d346aadb39c",
+      "verification": "Every archived file matched its source SHA-256 and size."
+    },
+    {
+      "archive": "archives/svhn-qiskit-seed-42.tar.gz",
+      "source": "runs/svhn/qiskit/seed-42",
+      "source_files": 66437,
+      "source_bytes": 1921157766,
+      "archive_bytes": 1425484723,
+      "sha256": "50f5a723cf69b3e72ff892bf4dfb9fc3409bf43b14ac4ee6b1afa33d59080911",
+      "inventory": "inventories/svhn-qiskit-seed-42.jsonl.gz",
+      "inventory_sha256": "94cba61d1efc69513eec8385b240b65ffc8c3c858bd6116cc4f64cacc1bbaa82",
+      "verification": "Every archived file matched its source SHA-256 and size."
+    },
+    {
+      "archive": "archives/gtsrb-pennylane-seed-42.tar.gz",
+      "source": "runs/gtsrb/pennylane/seed-42",
+      "source_files": 26637,
+      "source_bytes": 1423899807,
+      "archive_bytes": 1230301570,
+      "sha256": "f2c13e20cfd11ea79fefaf66f58e124720a40bbf382bc22492f9686b5f3a000d",
+      "inventory": "inventories/gtsrb-pennylane-seed-42.jsonl.gz",
+      "inventory_sha256": "11f0ef7ef5c0a9ae749ae38a4b4ca17e51699cfde7de2b5233f4fe6de6b0fe10",
+      "verification": "Every archived file matched its source SHA-256 and size."
+    },
+    {
+      "archive": "archives/gtsrb-qiskit-seed-42.tar.gz",
+      "source": "runs/gtsrb/qiskit/seed-42",
+      "source_files": 26637,
+      "source_bytes": 1428212258,
+      "archive_bytes": 1229152965,
+      "sha256": "c2a796919000b6bd79283a1d8813acfbdf2aa92a1acda97a17aff573e0dd9e83",
+      "inventory": "inventories/gtsrb-qiskit-seed-42.jsonl.gz",
+      "inventory_sha256": "113621c28a96e121aab65dc32f4c17cb890c92ab280c51724ca01f582bf22672",
+      "verification": "Every archived file matched its source SHA-256 and size."
+    },
+    {
+      "archive": "archives/fer2013-pennylane-seed-42.tar.gz",
+      "source": "runs/fer2013/pennylane/seed-42",
+      "source_files": 24437,
+      "source_bytes": 734315629,
+      "archive_bytes": 558524087,
+      "sha256": "18530733177baf3fbb0b02f6ec43f79a7dfb0bc285335646f23f79f11e88e7de",
+      "inventory": "inventories/fer2013-pennylane-seed-42.jsonl.gz",
+      "inventory_sha256": "477379b6a329b1c0f2b4cc7b71b5861587ccb69a6a041a3ab4e19b02083dc5ad",
+      "verification": "Every archived file matched its source SHA-256 and size."
+    },
+    {
+      "archive": "archives/fer2013-qiskit-seed-42.tar.gz",
+      "source": "runs/fer2013/qiskit/seed-42",
+      "source_files": 24437,
+      "source_bytes": 739223935,
+      "archive_bytes": 558695299,
+      "sha256": "15222aa231131e2f5df04183f7d3a987ffbbaf711d05883864ca66b1529367aa",
+      "inventory": "inventories/fer2013-qiskit-seed-42.jsonl.gz",
+      "inventory_sha256": "189a11a6e5842ea1ce0fc1f4249e4570dc18a6ed60cddf058f22339f654953d3",
+      "verification": "Every archived file matched its source SHA-256 and size."
+    },
+    {
+      "archive": "archives/smoke-mnist-pennylane-seed-42.tar.gz",
+      "source": "smoke/mnist/pennylane/seed-42",
+      "source_files": 239,
+      "source_bytes": 8706485,
+      "archive_bytes": 8105067,
+      "sha256": "67d7fd47c96dc1f02d79bc84e9155eec34735040d33a78214f04769556145b6e",
+      "inventory": "inventories/smoke-mnist-pennylane-seed-42.jsonl.gz",
+      "inventory_sha256": "845c01ae63b2dfa4dae5e58f122de482e92f60b5c2f2c7df3fe8997906c12d45",
+      "verification": "Every archived file matched its source SHA-256 and size."
+    }
+  ],
+  "original_matrix_files": [
+    {
+      "source": "runs/matrix.json",
+      "path": "original-matrices/runs/matrix.json",
+      "bytes": 28830,
+      "sha256": "ccbc54b9362b7075c4503a7e586601747ed93ba27a0f13ac1ca8af1aeb0f2e65"
+    },
+    {
+      "source": "runs/matrix_status.json",
+      "path": "original-matrices/runs/matrix_status.json",
+      "bytes": 110,
+      "sha256": "4627d03fdd733db07f11b4c37a33d24343058ddfab9f64cc2de4f07ea0508a88"
+    },
+    {
+      "source": "runs/preflight.json",
+      "path": "original-matrices/runs/preflight.json",
+      "bytes": 2120,
+      "sha256": "cd0a01097fc6e795ee8921f98e6e40e10361c4a56f00ad47138027aeac198033"
+    },
+    {
+      "source": "runs/results.csv",
+      "path": "original-matrices/runs/results.csv",
+      "bytes": 830,
+      "sha256": "6d52b17084928aedd0e66ba8c7b0cf0104b7947eb76090e32be789581c383e2a"
+    },
+    {
+      "source": "smoke/matrix.json",
+      "path": "original-matrices/smoke/matrix.json",
+      "bytes": 14493,
+      "sha256": "c87dae811d91833fdb0f18efdd9bc8faa1a381353a3301b5eb54f5e99fb813e4"
+    },
+    {
+      "source": "smoke/matrix_status.json",
+      "path": "original-matrices/smoke/matrix_status.json",
+      "bytes": 111,
+      "sha256": "6d0831f7ccf82cfb2fd13ee619e4889c9ae152f00e2e1dcdafea0809c4c0e28e"
+    },
+    {
+      "source": "smoke/preflight.json",
+      "path": "original-matrices/smoke/preflight.json",
+      "bytes": 2120,
+      "sha256": "a4593fd1f19ebc5cd97bc4dfcf8d3456466e6f37eed39998590da0d70fbb725d"
+    },
+    {
+      "source": "smoke/results.csv",
+      "path": "original-matrices/smoke/results.csv",
+      "bytes": 564,
+      "sha256": "3653cc4ab56199e7fabf017395d86d6f35bab31ddcad2b7db404eb29e3ba7549"
+    }
+  ],
+  "total_source_files": 235271,
+  "total_source_bytes": 8161976666,
+  "total_archive_bytes": 6434620269
+}

@@ -1,1 +1,4 @@
 outputs/**/artifacts/features128/*.npy filter=lfs diff=lfs merge=lfs -text
+results/quantum-parallel-128-20/archives/*.tar.gz filter=lfs diff=lfs merge=lfs -text
+results/quantum-parallel-128-20/inventories/*.jsonl.gz -text
+results/quantum-parallel-128-20/original-matrices/** -text
