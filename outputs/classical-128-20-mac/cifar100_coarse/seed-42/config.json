@@ -1,0 +1,38 @@
+{
+  "batch_size": 128,
+  "checkpoint_metric": "val_macro_f1",
+  "dataset": "cifar100_coarse",
+  "early_stopping": false,
+  "experiment": "classical_128_relu_20_tanh_features128",
+  "hidden_activation": "tanh",
+  "hidden_units": 20,
+  "input_features": 128,
+  "learning_rate": 0.0003,
+  "lr_scheduler": false,
+  "max_epochs": 100,
+  "num_classes": 20,
+  "optimizer": "adam",
+  "platform": "darwin",
+  "precision": "float32",
+  "projection_activation": "relu",
+  "projection_units": 128,
+  "seed": 42,
+  "source_feature_hashes": {
+    "test_features.npy": "cf6c453f0e82040bb471510e891e2e601f29a9b69abb1e38bfd4d55bb9cef11e",
+    "test_labels.npy": "ccd0062082f185aa8ed1620c99738e2f22c42a135ed89bf5dbabef8e4793557d",
+    "train_features.npy": "41a7973004371f97257cbba766f4202ffc934bd92e6e5883bfe9123faf56c289",
+    "train_labels.npy": "c98a479f7dd88070fa9dc5cb4f413944d711ebb6450367505b59a734334502d5",
+    "val_features.npy": "43550a7702e8c881f037d240c3bef9adaa8710a921032f4299009b030d618542",
+    "val_labels.npy": "1e7d667601852b93172b9806aa25aa6d38693ef31214369d665fd6f9e15ed879"
+  },
+  "source_features": "/Users/matheus-duda/Desktop/repos/projeto-do-tcc/projeto-tcc-quantico/outputs/classic-dense20/cifar100_coarse/runs/cifar100_coarse__dense20_fp32_aug05__seed-42/artifacts/features128",
+  "split_fingerprint": "c5f33c74d1bd3def59246c517a567c911f730b09064cf4fc52cbbb4497c5afa0",
+  "telemetry_interval_seconds": 5.0,
+  "transformations": {
+    "augmentation": false,
+    "feature_selection": false,
+    "normalization": false,
+    "pca": false,
+    "scaler": false
+  }
+}

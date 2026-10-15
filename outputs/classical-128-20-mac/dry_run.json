@@ -1,0 +1,33 @@
+{
+  "datasets": [
+    "mnist",
+    "fashion_mnist",
+    "kmnist",
+    "emnist_balanced",
+    "cifar10",
+    "cifar100_coarse",
+    "svhn",
+    "gtsrb",
+    "fer2013"
+  ],
+  "failures": 0,
+  "ok": true,
+  "settings": {
+    "batch_size": 128,
+    "checkpoint_metric": "val_macro_f1",
+    "early_stopping": false,
+    "hidden_activation": "tanh",
+    "hidden_units": 20,
+    "input_features": 128,
+    "learning_rate": 0.0003,
+    "lr_scheduler": false,
+    "max_epochs": 100,
+    "optimizer": "adam",
+    "precision": "float32",
+    "projection_activation": "relu",
+    "projection_units": 128,
+    "seed": 42,
+    "telemetry_interval_seconds": 5.0
+  },
+  "timestamp": "2026-10-03T00:45:49.254+00:00"
+}

@@ -1,1 +1,4 @@
 outputs/**/artifacts/features128/*.npy filter=lfs diff=lfs merge=lfs -text
+outputs/**/*.npz filter=lfs diff=lfs merge=lfs -text
+outputs/quantum-parallel-128-20/runs/emnist_balanced/qiskit/seed-42/diagnostics/batches.csv filter=lfs diff=lfs merge=lfs -text
+outputs/quantum-parallel-128-20/runs/svhn/qiskit/seed-42/diagnostics/batches.csv filter=lfs diff=lfs merge=lfs -text

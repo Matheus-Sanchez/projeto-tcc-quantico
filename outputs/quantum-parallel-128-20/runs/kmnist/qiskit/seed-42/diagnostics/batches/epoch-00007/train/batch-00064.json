@@ -1,0 +1,227 @@
+{
+  "batch": 64,
+  "batch_seconds": 1.5635103340027854,
+  "circuits": [
+    {
+      "backward_seconds": 1.5456629159743898,
+      "batch": 64,
+      "circuit": 0,
+      "epoch": 7,
+      "evaluations": 12928,
+      "forward_seconds": 0.014644832990597934,
+      "gradients": [
+        {
+          "evaluations": 12800,
+          "input_gradient_norm": 0.005868109611093792,
+          "input_gradient_variance": 5.374183440712261e-08,
+          "per_example_gradient_variance_mean": 1.569875332706132e-08,
+          "seconds": 1.5456629159743898,
+          "weight_gradient_norm": 0.00976841729350022,
+          "weight_gradient_variance": 2.1203064834631125e-06
+        }
+      ],
+      "id": "epoch-00007/train/batch-00064/circuit-0",
+      "inputs_radians": {
+        "max": 4.149929046630859,
+        "mean": 0.461795515139238,
+        "min": -3.1170711517333984,
+        "norm": 42.557966134096105,
+        "std": 1.6176261633936075,
+        "variance": 2.6167144044955224
+      },
+      "outputs_y": {
+        "max": 0.9917049407958984,
+        "mean": 0.03250759331858717,
+        "min": -0.9941081404685974,
+        "norm": 22.745858570946424,
+        "std": 0.8985211515061697,
+        "variance": 0.8073402597039732
+      },
+      "parameter_update": {
+        "max": 6.532669067382812e-05,
+        "mean": -2.465562687979804e-06,
+        "min": -8.0108642578125e-05,
+        "norm": 0.0002360959297481482,
+        "std": 3.5108635554381275e-05,
+        "variance": 1.232616290490365e-09
+      },
+      "parameters": {
+        "max": 6.36949348449707,
+        "mean": 3.4047593891620638,
+        "min": 0.03783201426267624,
+        "norm": 25.814111445625507,
+        "std": 1.7932649138946326,
+        "variance": 3.215799051405524
+      },
+      "phase": "train"
+    },
+    {
+      "backward_seconds": 1.5443277499871328,
+      "batch": 64,
+      "circuit": 1,
+      "epoch": 7,
+      "evaluations": 12928,
+      "forward_seconds": 0.01458437496330589,
+      "gradients": [
+        {
+          "evaluations": 12800,
+          "input_gradient_norm": 0.0033072987798856827,
+          "input_gradient_variance": 1.7049348918608063e-08,
+          "per_example_gradient_variance_mean": 6.716347217177013e-09,
+          "seconds": 1.5443277499871328,
+          "weight_gradient_norm": 0.007638248969752424,
+          "weight_gradient_variance": 1.2865071575427532e-06
+        }
+      ],
+      "id": "epoch-00007/train/batch-00064/circuit-1",
+      "inputs_radians": {
+        "max": 3.1537463665008545,
+        "mean": 0.4628034012566786,
+        "min": -2.5410444736480713,
+        "norm": 37.256985921442656,
+        "std": 1.398103250553415,
+        "variance": 1.9546926992080251
+      },
+      "outputs_y": {
+        "max": 0.7990458011627197,
+        "mean": -0.12964259715499793,
+        "min": -0.8419245481491089,
+        "norm": 12.299697200494059,
+        "std": 0.4685848730914808,
+        "variance": 0.21957178329015914
+      },
+      "parameter_update": {
+        "max": 0.00010764598846435547,
+        "mean": -9.98377799987793e-07,
+        "min": -8.535385131835938e-05,
+        "norm": 0.00029309429413891107,
+        "std": 4.368050954535129e-05,
+        "variance": 1.9079869141415252e-09
+      },
+      "parameters": {
+        "max": 5.3845367431640625,
+        "mean": 2.778120695385668,
+        "min": -0.22145609557628632,
+        "norm": 21.501467737008763,
+        "std": 1.5986463574590717,
+        "variance": 2.555670176217158
+      },
+      "phase": "train"
+    },
+    {
+      "backward_seconds": 1.54361999995308,
+      "batch": 64,
+      "circuit": 2,
+      "epoch": 7,
+      "evaluations": 12928,
+      "forward_seconds": 0.01484595803776756,
+      "gradients": [
+        {
+          "evaluations": 12800,
+          "input_gradient_norm": 0.0037439150806675126,
+          "input_gradient_variance": 2.1895585398380304e-08,
+          "per_example_gradient_variance_mean": 7.979374543368479e-09,
+          "seconds": 1.54361999995308,
+          "weight_gradient_norm": 0.008978683959073312,
+          "weight_gradient_variance": 1.4611437239860276e-06
+        }
+      ],
+      "id": "epoch-00007/train/batch-00064/circuit-2",
+      "inputs_radians": {
+        "max": 2.591116189956665,
+        "mean": -0.5211307389545254,
+        "min": -4.792067527770996,
+        "norm": 36.93570890987579,
+        "std": 1.3638394531511107,
+        "variance": 1.8600580539715206
+      },
+      "outputs_y": {
+        "max": 0.873193621635437,
+        "mean": 0.07538527366650669,
+        "min": -0.8425456285476685,
+        "norm": 14.641719702424828,
+        "std": 0.5738342456851652,
+        "variance": 0.3292857415210625
+      },
+      "parameter_update": {
+        "max": 9.059906005859375e-05,
+        "mean": -1.3690690199534098e-05,
+        "min": -0.00010704994201660156,
+        "norm": 0.00035647635177924467,
+        "std": 5.134649494941358e-05,
+        "variance": 2.636462543590154e-09
+      },
+      "parameters": {
+        "max": 6.004141807556152,
+        "mean": 2.9137798933519257,
+        "min": -0.05430235713720322,
+        "norm": 22.519330081467885,
+        "std": 1.6671008121720785,
+        "variance": 2.779225117944804
+      },
+      "phase": "train"
+    },
+    {
+      "backward_seconds": 1.515979541989509,
+      "batch": 64,
+      "circuit": 3,
+      "epoch": 7,
+      "evaluations": 12928,
+      "forward_seconds": 0.01480029197409749,
+      "gradients": [
+        {
+          "evaluations": 12800,
+          "input_gradient_norm": 0.0026026376896230116,
+          "input_gradient_variance": 1.0579401334202253e-08,
+          "per_example_gradient_variance_mean": 5.023960015125147e-09,
+          "seconds": 1.515979541989509,
+          "weight_gradient_norm": 0.006233502235162825,
+          "weight_gradient_variance": 8.357654430114941e-07
+        }
+      ],
+      "id": "epoch-00007/train/batch-00064/circuit-3",
+      "inputs_radians": {
+        "max": 3.2818644046783447,
+        "mean": 0.014108439376286697,
+        "min": -3.6958770751953125,
+        "norm": 32.24334161418712,
+        "std": 1.274451896705088,
+        "variance": 1.6242276370151962
+      },
+      "outputs_y": {
+        "max": 0.8421773910522461,
+        "mean": -0.006720662217867357,
+        "min": -0.8123367428779602,
+        "norm": 11.757537136384741,
+        "std": 0.4647088679368455,
+        "variance": 0.21595433193914454
+      },
+      "parameter_update": {
+        "max": 0.0001087188720703125,
+        "mean": -3.47312953737047e-06,
+        "min": -0.00011134147644042969,
+        "norm": 0.0003196116263302591,
+        "std": 4.751813066614613e-05,
+        "variance": 2.2579727420049373e-09
+      },
+      "parameters": {
+        "max": 6.319135665893555,
+        "mean": 3.1703079683913127,
+        "min": 0.11283570528030396,
+        "norm": 24.780813052151146,
+        "std": 1.8961969416915614,
+        "variance": 3.5955628416804304
+      },
+      "phase": "train"
+    }
+  ],
+  "epoch": 7,
+  "examples_per_second": 81.8670636300201,
+  "keras": {
+    "accuracy": 0.9987980723381042,
+    "loss": 0.03402102366089821
+  },
+  "logical_circuit_evaluations": 51712,
+  "logical_evaluations_per_second": 33074.293706528115,
+  "phase": "train"
+}
